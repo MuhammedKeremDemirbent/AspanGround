@@ -1,0 +1,24 @@
+﻿/* Cesium widget'ı tam ekran yap */
+.cesium-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+/* Toolbar'ı gizle */
+.cesium-viewer-toolbar {
+    display: none !important;
+}
+
+/* Attribution'ı gizle */
+.cesium-viewer-bottom {
+    display: none !important;
+}
+
+ #cesiumContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+

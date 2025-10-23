@@ -1,0 +1,11 @@
+﻿# Ignore build output
+AspanGround/Release/
+AspanGround/Debug/
+*.msi
+
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+[Bb]in/
+[Oo]bj/
