@@ -28,7 +28,7 @@ using static AspanGround_2.PID;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 //Bismillahirrahmanirrahim
-//Author : Muhammed Kerem Demirbent
+//Author: Muhammed Kerem Demirbent
 namespace AspanGround_2
 {
     [PermissionSet(SecurityAction.Demand, Name = "FullTrust")] //Full yetki
