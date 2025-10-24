@@ -4,6 +4,7 @@ using LiveCharts.Wpf;
 using LiveCharts;
 using System;
 
+// Telemetry parse etme bölümü
 namespace AspanGround_2
 {
     internal class telemetry
