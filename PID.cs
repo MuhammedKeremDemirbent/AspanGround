@@ -1,5 +1,7 @@
 ﻿using System;
 
+// PID kontrolör yapısı ve işlevleri
+
 namespace AspanGround_2
 {
     public struct PIDController
