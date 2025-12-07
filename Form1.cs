@@ -487,11 +487,13 @@ namespace AspanGround_2
                                     labelRollSetpoint.Text =((telem.RH - 1000) / 12).ToString("F2");  //labelRollSetpoint.Text =ROLLSetpoint.ToString("F2");
                                     labelPitchSetpoint.Text =((telem.RV - 1000) / 12).ToString("F2");
                                     labelYawSetpoint.Text = ((telem.LH - 1000) / 12).ToString("F2");
+
+                                    
                                    
                                 }
                                 else if (packetType == 0x11)
                                 {
-                                  
+                                    
 
                                     // GPS paketi
                                     GpsData gps = telemetry.ParseGps(packet);
@@ -511,15 +513,15 @@ namespace AspanGround_2
                                     byte uiId = GetUiIdFromFw(fwId);
                                     if (uiId != 255)
                                     {
-                                        Console.WriteLine($"PID paketi yakalandı: FW ID={fwId} (Type=0x{packetType:X2}), UI ID={uiId}");
+                                        //Console.WriteLine($"PID paketi yakalandı: FW ID={fwId} (Type=0x{packetType:X2}), UI ID={uiId}");
                                         PIDController gains = PID.ParsePid(packet, fwId);
                                         pidGains[uiId] = gains;
                                         UpdatePid(uiId, gains);
-                                        Console.WriteLine($"PID UI{uiId} güncellendi: P={gains.P:F2}, I={gains.I:F2}, D={gains.D:F2}");
+                                        //Console.WriteLine($"PID UI{uiId} güncellendi: P={gains.P:F2}, I={gains.I:F2}, D={gains.D:F2}");
                                     }
                                     else
                                     {
-                                        Console.WriteLine($"PID FW ID={fwId} (Type=0x{packetType:X2}) UI'ye map'lenemedi – Atlanıyor");
+                                        //Console.WriteLine($"PID FW ID={fwId} (Type=0x{packetType:X2}) UI'ye map'lenemedi – Atlanıyor");
                                     }
                                 }
                             })); 

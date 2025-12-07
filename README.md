@@ -5,15 +5,16 @@ It includes a dedicated flight card.
 
 ## Some of Features and Opportunities
 
-- Unique System: Mathematical and Mechatronic enginnering students made a communication system with STM32 and telemetry.
+- 🎨 Unique System: Mathematical and Mechatronic enginnering students made a communication system with STM32 and telemetry.
 
-- 🚀 Easy and Free to Use: 
+- 🪶 Easy and Free to Use: The interface, which has a basic level design, is easy for people to use and free.
 
-- Open Source: You can download ground control codes and update them. 
+- 🌍 Open Source: You can download ground control codes and update them. 
 
 
 ## 🔗 Useful Links
 
 * 💼[Linkedn](https://www.linkedin.com/company/aspan-uav/)
+
 * 📸[İnstagram](https://www.instagram.com/aspanuav/)
 

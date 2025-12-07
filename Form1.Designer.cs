@@ -73,6 +73,8 @@
             this.panelBottomLeft = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.ButtonDeleteWaypoint = new Guna.UI2.WinForms.Guna2Button();
+            this.headingIndicatorInstrumentControl1 = new AvionicsInstrumentControlDemo.HeadingIndicatorInstrumentControl();
+            this.attitudeIndicatorInstrumentControl1 = new AvionicsInstrumentControlDemo.AttitudeIndicatorInstrumentControl();
             this.dataGridViewWaypoints = new Guna.UI2.WinForms.Guna2DataGridView();
             this.idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,12 +151,10 @@
             this.pictureBoxInstangram = new System.Windows.Forms.PictureBox();
             this.pictureBoxLinkedn = new System.Windows.Forms.PictureBox();
             this.linkLabelSoruGorus = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelHkkmzda = new System.Windows.Forms.Label();
             this.linkLabelWebSitesi = new System.Windows.Forms.LinkLabel();
             this.timerGauge = new System.Windows.Forms.Timer(this.components);
             this.timerSerialCheck = new System.Windows.Forms.Timer(this.components);
-            this.headingIndicatorInstrumentControl1 = new AvionicsInstrumentControlDemo.HeadingIndicatorInstrumentControl();
-            this.attitudeIndicatorInstrumentControl1 = new AvionicsInstrumentControlDemo.AttitudeIndicatorInstrumentControl();
             this.panelUpper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).BeginInit();
@@ -625,9 +625,9 @@
             this.TabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.TabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.TabControl.TabButtonHoverState.Font = new System.Drawing.Font("Nirmala UI Semilight", 16.2F);
-            this.TabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.TabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.Snow;
             this.TabControl.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
-            this.TabControl.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.TabControl.TabButtonIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.TabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.TabControl.TabButtonIdleState.Font = new System.Drawing.Font("Nirmala UI Semilight", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControl.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
@@ -635,7 +635,7 @@
             this.TabControl.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
             this.TabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
             this.TabControl.TabButtonSelectedState.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.TabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.Snow;
             this.TabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
             this.TabControl.TabButtonSize = new System.Drawing.Size(180, 60);
             this.TabControl.TabIndex = 48;
@@ -722,6 +722,22 @@
             this.ButtonDeleteWaypoint.Text = "Delete Last Point";
             this.ButtonDeleteWaypoint.Click += new System.EventHandler(this.ButtonDeleteWaypoint_Click);
             // 
+            // headingIndicatorInstrumentControl1
+            // 
+            this.headingIndicatorInstrumentControl1.Location = new System.Drawing.Point(389, 15);
+            this.headingIndicatorInstrumentControl1.Name = "headingIndicatorInstrumentControl1";
+            this.headingIndicatorInstrumentControl1.Size = new System.Drawing.Size(356, 343);
+            this.headingIndicatorInstrumentControl1.TabIndex = 65;
+            this.headingIndicatorInstrumentControl1.Text = "headingIndicatorInstrumentControl1";
+            // 
+            // attitudeIndicatorInstrumentControl1
+            // 
+            this.attitudeIndicatorInstrumentControl1.Location = new System.Drawing.Point(12, 15);
+            this.attitudeIndicatorInstrumentControl1.Name = "attitudeIndicatorInstrumentControl1";
+            this.attitudeIndicatorInstrumentControl1.Size = new System.Drawing.Size(358, 343);
+            this.attitudeIndicatorInstrumentControl1.TabIndex = 64;
+            this.attitudeIndicatorInstrumentControl1.Text = "attitudeIndicatorInstrumentControl1";
+            // 
             // dataGridViewWaypoints
             // 
             this.dataGridViewWaypoints.AllowUserToAddRows = false;
@@ -750,7 +766,7 @@
             this.Longitude,
             this.Latitude});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -763,7 +779,7 @@
             this.dataGridViewWaypoints.Name = "dataGridViewWaypoints";
             this.dataGridViewWaypoints.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -772,6 +788,8 @@
             this.dataGridViewWaypoints.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewWaypoints.RowHeadersVisible = false;
             this.dataGridViewWaypoints.RowHeadersWidth = 51;
+            this.dataGridViewWaypoints.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Snow;
+            this.dataGridViewWaypoints.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewWaypoints.RowTemplate.Height = 24;
             this.dataGridViewWaypoints.Size = new System.Drawing.Size(1140, 214);
             this.dataGridViewWaypoints.TabIndex = 43;
@@ -782,19 +800,19 @@
             this.dataGridViewWaypoints.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dataGridViewWaypoints.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.dataGridViewWaypoints.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Snow;
             this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridViewWaypoints.ThemeStyle.HeaderStyle.Height = 35;
             this.dataGridViewWaypoints.ThemeStyle.ReadOnly = true;
-            this.dataGridViewWaypoints.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridViewWaypoints.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.Snow;
             this.dataGridViewWaypoints.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridViewWaypoints.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.dataGridViewWaypoints.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGridViewWaypoints.ThemeStyle.RowsStyle.Height = 24;
-            this.dataGridViewWaypoints.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridViewWaypoints.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.Snow;
             this.dataGridViewWaypoints.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // idx
@@ -1253,7 +1271,7 @@
             this.groupBoxRateYaw.Controls.Add(this.labelIMAXY);
             this.groupBoxRateYaw.Controls.Add(this.labelFILTY);
             this.groupBoxRateYaw.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRateYaw.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxRateYaw.ForeColor = System.Drawing.Color.Snow;
             this.groupBoxRateYaw.Location = new System.Drawing.Point(763, 421);
             this.groupBoxRateYaw.Name = "groupBoxRateYaw";
             this.groupBoxRateYaw.Size = new System.Drawing.Size(709, 362);
@@ -1435,7 +1453,7 @@
             this.groupBoxRatePitch.Controls.Add(this.labelIMAXP);
             this.groupBoxRatePitch.Controls.Add(this.labelFILTP);
             this.groupBoxRatePitch.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRatePitch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxRatePitch.ForeColor = System.Drawing.Color.Snow;
             this.groupBoxRatePitch.Location = new System.Drawing.Point(763, 28);
             this.groupBoxRatePitch.Name = "groupBoxRatePitch";
             this.groupBoxRatePitch.Size = new System.Drawing.Size(709, 362);
@@ -1617,7 +1635,7 @@
             this.groupBoxRateRoll.Controls.Add(this.labelIMAXR);
             this.groupBoxRateRoll.Controls.Add(this.labelFILTR);
             this.groupBoxRateRoll.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRateRoll.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBoxRateRoll.ForeColor = System.Drawing.Color.Snow;
             this.groupBoxRateRoll.Location = new System.Drawing.Point(34, 28);
             this.groupBoxRateRoll.Name = "groupBoxRateRoll";
             this.groupBoxRateRoll.Size = new System.Drawing.Size(709, 362);
@@ -1802,8 +1820,9 @@
             this.tabPage1.Controls.Add(this.pictureBoxInstangram);
             this.tabPage1.Controls.Add(this.pictureBoxLinkedn);
             this.tabPage1.Controls.Add(this.linkLabelSoruGorus);
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.labelHkkmzda);
             this.tabPage1.Controls.Add(this.linkLabelWebSitesi);
+            this.tabPage1.ForeColor = System.Drawing.Color.Snow;
             this.tabPage1.Location = new System.Drawing.Point(4, 64);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1813,9 +1832,10 @@
             // 
             // pictureBoxMail
             // 
+            this.pictureBoxMail.BackColor = System.Drawing.Color.Snow;
             this.pictureBoxMail.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxMail.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMail.Image")));
-            this.pictureBoxMail.Location = new System.Drawing.Point(342, 426);
+            this.pictureBoxMail.Location = new System.Drawing.Point(914, 148);
             this.pictureBoxMail.Name = "pictureBoxMail";
             this.pictureBoxMail.Size = new System.Drawing.Size(98, 90);
             this.pictureBoxMail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1825,9 +1845,10 @@
             // 
             // pictureBoxInstangram
             // 
+            this.pictureBoxInstangram.BackColor = System.Drawing.Color.Snow;
             this.pictureBoxInstangram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxInstangram.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxInstangram.Image")));
-            this.pictureBoxInstangram.Location = new System.Drawing.Point(211, 426);
+            this.pictureBoxInstangram.Location = new System.Drawing.Point(783, 148);
             this.pictureBoxInstangram.Name = "pictureBoxInstangram";
             this.pictureBoxInstangram.Size = new System.Drawing.Size(98, 90);
             this.pictureBoxInstangram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1837,9 +1858,10 @@
             // 
             // pictureBoxLinkedn
             // 
+            this.pictureBoxLinkedn.BackColor = System.Drawing.Color.Snow;
             this.pictureBoxLinkedn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxLinkedn.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLinkedn.Image")));
-            this.pictureBoxLinkedn.Location = new System.Drawing.Point(80, 426);
+            this.pictureBoxLinkedn.Location = new System.Drawing.Point(652, 148);
             this.pictureBoxLinkedn.Name = "pictureBoxLinkedn";
             this.pictureBoxLinkedn.Size = new System.Drawing.Size(98, 90);
             this.pictureBoxLinkedn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1851,7 +1873,7 @@
             // 
             this.linkLabelSoruGorus.AutoSize = true;
             this.linkLabelSoruGorus.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.linkLabelSoruGorus.LinkColor = System.Drawing.Color.White;
+            this.linkLabelSoruGorus.LinkColor = System.Drawing.Color.Snow;
             this.linkLabelSoruGorus.Location = new System.Drawing.Point(76, 254);
             this.linkLabelSoruGorus.Name = "linkLabelSoruGorus";
             this.linkLabelSoruGorus.Size = new System.Drawing.Size(341, 38);
@@ -1860,22 +1882,23 @@
             this.linkLabelSoruGorus.Text = "Soru ve Görüşleriniz İçin";
             this.linkLabelSoruGorus.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSoruGorus_LinkClicked);
             // 
-            // label1
+            // labelHkkmzda
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(70, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 59);
-            this.label1.TabIndex = 77;
-            this.label1.Text = "Hakkımızda";
+            this.labelHkkmzda.AllowDrop = true;
+            this.labelHkkmzda.AutoSize = true;
+            this.labelHkkmzda.Font = new System.Drawing.Font("Nirmala UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHkkmzda.ForeColor = System.Drawing.Color.Snow;
+            this.labelHkkmzda.Location = new System.Drawing.Point(70, 55);
+            this.labelHkkmzda.Name = "labelHkkmzda";
+            this.labelHkkmzda.Size = new System.Drawing.Size(263, 59);
+            this.labelHkkmzda.TabIndex = 77;
+            this.labelHkkmzda.Text = "Hakkımızda";
             // 
             // linkLabelWebSitesi
             // 
             this.linkLabelWebSitesi.AutoSize = true;
             this.linkLabelWebSitesi.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelWebSitesi.LinkColor = System.Drawing.Color.White;
+            this.linkLabelWebSitesi.LinkColor = System.Drawing.Color.Snow;
             this.linkLabelWebSitesi.Location = new System.Drawing.Point(74, 200);
             this.linkLabelWebSitesi.Name = "linkLabelWebSitesi";
             this.linkLabelWebSitesi.Size = new System.Drawing.Size(181, 38);
@@ -1892,22 +1915,6 @@
             // 
             this.timerSerialCheck.Enabled = true;
             this.timerSerialCheck.Tick += new System.EventHandler(this.timerSerialCheck_Tick);
-            // 
-            // headingIndicatorInstrumentControl1
-            // 
-            this.headingIndicatorInstrumentControl1.Location = new System.Drawing.Point(389, 15);
-            this.headingIndicatorInstrumentControl1.Name = "headingIndicatorInstrumentControl1";
-            this.headingIndicatorInstrumentControl1.Size = new System.Drawing.Size(356, 343);
-            this.headingIndicatorInstrumentControl1.TabIndex = 65;
-            this.headingIndicatorInstrumentControl1.Text = "headingIndicatorInstrumentControl1";
-            // 
-            // attitudeIndicatorInstrumentControl1
-            // 
-            this.attitudeIndicatorInstrumentControl1.Location = new System.Drawing.Point(12, 15);
-            this.attitudeIndicatorInstrumentControl1.Name = "attitudeIndicatorInstrumentControl1";
-            this.attitudeIndicatorInstrumentControl1.Size = new System.Drawing.Size(358, 343);
-            this.attitudeIndicatorInstrumentControl1.TabIndex = 64;
-            this.attitudeIndicatorInstrumentControl1.Text = "attitudeIndicatorInstrumentControl1";
             // 
             // AspanGround
             // 
@@ -2081,7 +2088,7 @@
         private System.Windows.Forms.Label labelIMAXP;
         private System.Windows.Forms.Label labelFILTP;
         private System.Windows.Forms.LinkLabel linkLabelWebSitesi;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelHkkmzda;
         private System.Windows.Forms.LinkLabel linkLabelSoruGorus;
         private System.Windows.Forms.PictureBox pictureBoxLinkedn;
         private System.Windows.Forms.PictureBox pictureBoxInstangram;

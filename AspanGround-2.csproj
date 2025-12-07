@@ -209,7 +209,6 @@
     <EmbeddedResource Include="Resources\Icons\AirSpeedNeedle.bmp" />
     <EmbeddedResource Include="Resources\Icons\Altimeter_Background.bmp" />
     <EmbeddedResource Include="Resources\Icons\Bandeau_Dérouleur.bmp" />
-    <EmbeddedResource Include="Resources\Icons\HeadingIndicator_Aircraft.bmp" />
     <EmbeddedResource Include="Resources\Icons\Indicator_Background.bmp" />
     <EmbeddedResource Include="Resources\Icons\LongNeedleAltimeter.bmp" />
     <EmbeddedResource Include="Resources\Icons\Maquette_Avion.bmp" />
@@ -224,6 +223,7 @@
     <EmbeddedResource Include="Resources\Icons\HeadingWeel.png" />
     <EmbeddedResource Include="Resources\Icons\Horizon_Background.png" />
     <EmbeddedResource Include="Resources\Icons\Horizon_GroundSky.png" />
+    <Content Include="Resources\Icons\HeadingIndicator_Aircraft.bmp" />
     <Content Include="Resources\map.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -19,13 +19,13 @@ namespace AspanGround_2
             short RV = BitConverter.ToInt16(packet, 13);
             ushort LH = BitConverter.ToUInt16(packet, 15);
 
-            float roll_f = roll / 100.0f;
+            float roll_f = (roll / 100.0f)+180;
             float pitch_f = pitch / 100.0f;
             float yaw_f = yaw / 100.0f;
             float baroAltFilt_f = baroAltFilt / 10.0f;
-            float RH_f = RH / 100.0f;
-            float RV_f = RV / 100.0f;
-            float LH_f = LH / 100.0f;
+            float RH_f = RH ;
+            float RV_f = RV ;
+            float LH_f = LH;
 
             // Verileri bir struct olarak döndür
             return new TelemetryData
