@@ -24,6 +24,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Windows.Forms.DataVisualization.Charting;
 using static AspanGround_2.PID;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -39,8 +40,9 @@ namespace AspanGround_2
 
         private telemetry telemetry;  //telemetry.cs ile iletişim
         private PID PID;  //PID.cs ile iletişim
-        private PIDController[] pidGains = new PIDController[3];
-        
+        private PIDController[] pidGains = new PIDController[6];
+        private bool[] pidValid = new bool[6];
+
 
         private List<byte> buffer = new List<byte>();
 
@@ -61,7 +63,7 @@ namespace AspanGround_2
 
         #region ChartDescriptions
 
-        private SeriesCollection _series;
+        private LiveCharts.SeriesCollection _series;
         private LineSeries _rollSeries, _pitchSeries, _yawSeries, _rollSetpointSeries, _pitchSetpointSeries, _yawSetpointSeries;
 
         //Roll setpoint = (RH-1000)/12
@@ -344,8 +346,19 @@ namespace AspanGround_2
         #endregion
 
         #region SerialPort
+
+        public enum PacketType : byte
+        {
+            Telemetry = 0x10,
+            Gps = 0x11,
+            PidRead = 0x20,
+            PidWrite = 0x21,
+            PidReply = 0x22
+        }
         private void ButtonConnect_Click_1(object sender, EventArgs e)
         {
+
+
 
             try
             {
@@ -454,15 +467,17 @@ namespace AspanGround_2
                         if (packet[19] == checksum)
                         {
                             byte packetType = packet[2];
+
+                            
                             string hexDump = string.Join(" ", packet.Select(b => b.ToString("X2")));
                             Console.WriteLine($"Tam paket hex (Type=0x{packetType:X2}, ID={packet[3]}): {hexDump}");
 
                             this.Invoke(new Action(() =>
                             {
-                                if (packetType == 0x10)
-                                {                                                                      
+                                if (packetType == (byte)PacketType.Telemetry)
+                                {
                                     TelemetryData telem = telemetry.ParseTelemetry(packet);
-                                    
+
                                     currentRoll = telem.Roll;
                                     currentPitch = telem.Pitch;
                                     currentAltitude = telem.Altitude;
@@ -470,10 +485,10 @@ namespace AspanGround_2
                                     currentRH = telem.RH;
                                     currentRV = telem.RV;
                                     currentLH = telem.LH;
-                                   
+
                                     rollSetpoint = (telem.RH - 1000) / 12;  //(currentRH-1000)/12
                                     pitchSetpoint = (telem.RV - 1000) / 12;
-                                    yawSetpoint =  (telem.LH - 1000) / 12;
+                                    yawSetpoint = (telem.LH - 1000) / 12;
 
                                     labelRoll.Text = telem.Roll.ToString("F2");
                                     labelPitch.Text = telem.Pitch.ToString("F2");
@@ -483,19 +498,15 @@ namespace AspanGround_2
                                     labelRH.Text = telem.RH.ToString("F2");
                                     labelRV.Text = telem.RV.ToString("F2");
                                     labelLH.Text = telem.LH.ToString("F2");
-                                  
-                                    labelRollSetpoint.Text =((telem.RH - 1000) / 12).ToString("F2");  //labelRollSetpoint.Text =ROLLSetpoint.ToString("F2");
-                                    labelPitchSetpoint.Text =((telem.RV - 1000) / 12).ToString("F2");
+
+                                    labelRollSetpoint.Text = ((telem.RH - 1000) / 12).ToString("F2");  //labelRollSetpoint.Text =ROLLSetpoint.ToString("F2");
+                                    labelPitchSetpoint.Text = ((telem.RV - 1000) / 12).ToString("F2");
                                     labelYawSetpoint.Text = ((telem.LH - 1000) / 12).ToString("F2");
 
-                                    
-                                   
                                 }
-                                else if (packetType == 0x11)
+                                else if (packetType == (byte)PacketType.Gps)
                                 {
-                                    
 
-                                    // GPS paketi
                                     GpsData gps = telemetry.ParseGps(packet);
 
                                     currentLat = gps.Latitude;
@@ -507,23 +518,25 @@ namespace AspanGround_2
                                     UpdateDroneOnMap(currentLat, currentLon, currentAltitude, currentRoll, currentPitch, currentYaw);
 
                                 }
-                                else if (packetType >= 0x00 && packetType <= 0x05)  // Tüm PID type'larını yakala (0x00-0x05)
+                                else if (packetType == (byte)PacketType.PidReply)
                                 {
-                                    byte fwId = packet[2];  // *** DEĞİŞTİR: fwId = type ([2]) – log'lardan fwId burda! [3] her zaman 0 ***
-                                    byte uiId = GetUiIdFromFw(fwId);
-                                    if (uiId != 255)
+                                    byte fwId = packet[3];   // ✅ DOĞRU YER
+
+                                    if (fwId > 5)
                                     {
-                                        //Console.WriteLine($"PID paketi yakalandı: FW ID={fwId} (Type=0x{packetType:X2}), UI ID={uiId}");
-                                        PIDController gains = PID.ParsePid(packet, fwId);
-                                        pidGains[uiId] = gains;
-                                        UpdatePid(uiId, gains);
-                                        //Console.WriteLine($"PID UI{uiId} güncellendi: P={gains.P:F2}, I={gains.I:F2}, D={gains.D:F2}");
+                                        Console.WriteLine($"Geçersiz PID fwId: {fwId}");
+                                        return;
                                     }
-                                    else
-                                    {
-                                        //Console.WriteLine($"PID FW ID={fwId} (Type=0x{packetType:X2}) UI'ye map'lenemedi – Atlanıyor");
-                                    }
+
+                                    PIDController gains = PID.ParsePid(packet, fwId);
+                                    pidGains[fwId] = gains;
+
+                                    Console.WriteLine($"PID REPLY → Axis={fwId} P={gains.P} I={gains.I} D={gains.D}");
+
+                                    UpdatePid((PidAxis)fwId, gains);
                                 }
+
+
                             })); 
                         }
                     }
@@ -971,218 +984,211 @@ namespace AspanGround_2
         #endregion
 
         #region PID 
-        private byte GetFwIdFromUi(byte uiId)
+
+        public enum PidAxis : byte
         {
-            return (byte)(uiId == 0 ? 0 : uiId == 1 ? 2 : 5);
+            Roll = 0,
+            Pitch = 1,
+            Yaw = 2,
+            Height = 3,
+            East = 4,
+            North = 5
         }
-        private byte GetUiIdFromFw(byte fwId)
+
+        private void WritePid(PidAxis axis, PIDController gains)
         {
-            if (fwId == 0) return 0;      // Roll Inner
-            if (fwId == 2) return 1;      // Pitch Inner
-            if (fwId == 5) return 2;      // Yaw Rate
-            return 255;  // Atla
-        }  
-        private void UpdatePid(byte uiId, PIDController pid)
+            if (serialPort == null || !serialPort.IsOpen)
+            {
+                MessageBox.Show("Seri port kapalı");
+                return;
+            }
+
+            byte[] packet = PID.EncodePidWrite((byte)axis, gains);
+            serialPort.Write(packet, 0, packet.Length);
+
+            pidGains[(int)axis] = gains;
+            pidValid[(int)axis] = true;
+
+            // 🔥 UI’yi ZORLA güncelle
+            UpdatePid(axis, gains);
+
+            Console.WriteLine(
+                $"WRITE OK → {axis} | P={gains.P} I={gains.I} D={gains.D} E={gains.Extra}"
+            );
+        }
+
+
+
+        private void ReadPid(PidAxis axis)
         {
+            int id = (int)axis;
+
+            if (!pidValid[id])
+            {
+                Console.WriteLine($"PID cache boş: {axis}");
+                return;
+            }
+
+            UpdatePid(axis, pidGains[id]);
+        }
+
+        private void UpdatePid(PidAxis axis, PIDController pid)
+        {
+
+            if (this.InvokeRequired)
+            {
+                Invoke(new Action(() => UpdatePid(axis, pid)));
+                return;
+            }
+
             try
             {
-                switch (uiId)
+                switch (axis)
                 {
-                    case 0:  // Roll
+                    case PidAxis.Roll:  // Roll
                         NumericPR.Value = (decimal)pid.P;
                         NumericIR.Value = (decimal)pid.I;
                         NumericDR.Value = (decimal)pid.D;
-                        NumericIMAXR.Value = (decimal)pid.IMAX;
-                        NumericFILTR.Value = (decimal)pid.FF;
+                        NumericEXTRAR.Value = (decimal)pid.Extra;
+                        //NumericFILTR.Value = (decimal)pid.FF;
                         break;
-                    case 1:  // Pitch
+
+                    case PidAxis.Pitch:  // Pitch
                         NumericPP.Value = (decimal)pid.P;
                         NumericIP.Value = (decimal)pid.I;
                         NumericDP.Value = (decimal)pid.D;
-                        NumericIMAXP.Value = (decimal)pid.IMAX;
-                        NumericFILTP.Value = (decimal)pid.FF;
+                        NumericIEXTRAP.Value = (decimal)pid.Extra;
+                        //NumericFILTP.Value = (decimal)pid.FF;
                         break;
-                    case 2:  // Yaw
+
+                    case PidAxis.Yaw:  // Yaw
                         NumericPY.Value = (decimal)pid.P;
                         NumericIY.Value = (decimal)pid.I;
                         NumericDY.Value = (decimal)pid.D;
-                        NumericIMAXY.Value = (decimal)pid.IMAX;
-                        NumericFILTY.Value = (decimal)pid.FF;
+                        NumericEXTRAY.Value = (decimal)pid.Extra;
+                        //NumericFILTY.Value = (decimal)pid.FF;
                         break;
+
+                    case PidAxis.Height: 
+                        NumericPH.Value = (decimal)pid.P;
+                        NumericIH.Value = (decimal)pid.I;
+                        NumericDH.Value = (decimal)pid.D;
+                        NumericEXTRAH.Value = (decimal)pid.Extra;
+                        //NumericFILTR.Value = (decimal)pid.FF;
+                        break;
+
+                    case PidAxis.East:
+                        NumericPE.Value = (decimal)pid.P;
+                        NumericIE.Value = (decimal)pid.I;
+                        NumericDE.Value = (decimal)pid.D;
+                        NumericEXTRAE.Value = (decimal)pid.Extra;
+                        //NumericFILTY.Value = (decimal)pid.FF;
+                        break;
+
+                    case PidAxis.North:  
+                        NumericPN.Value = (decimal)pid.P;
+                        NumericIN.Value = (decimal)pid.I;
+                        NumericDN.Value = (decimal)pid.D;
+                        NumericEXTRAN.Value = (decimal)pid.Extra;
+                        //NumericFILTP.Value = (decimal)pid.FF;
+                        break;
+                    
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"UI güncelleme hatası (uiId={uiId}): {ex.Message}");  // *** EKLE: Hata log ***
+                Console.WriteLine($"UI güncelleme hatası (uiId={axis}): {ex.Message}"); 
             }
         }
         private void ButtonRollWrite_Click(object sender, EventArgs e)
         {
-            if (serialPort == null || !serialPort.IsOpen)
-            {
-                MessageBox.Show("Seri port bağlantısı yok! Önce 'Connect' butonuna basın.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                Console.WriteLine("PID yazma başlıyor...");
-
-                PIDController rollGains = new PIDController((float)NumericPR.Value, (float)NumericIR.Value, (float)NumericDR.Value);
-                byte[] rollPacket = PID.EncodePidWrite(0, rollGains);
-                serialPort.Write(rollPacket, 0, 20);
-                Console.WriteLine($"Roll yazıldı FW0 ([2]=0x00) - Hex: {BitConverter.ToString(rollPacket)} - P={rollGains.P:F2} I={rollGains.I:F2} D={rollGains.D:F2}");
-
-                System.Threading.Thread.Sleep(1000);
-                Console.WriteLine("Yazma sonrası read-back başlıyor...");
-                ButtonRollRefresh_Click(sender, e);
-
-                MessageBox.Show("PID'ler yazıldı ve yeniden yüklendi! Kartı resetle, Refresh ile kalıcı mı kontrol et.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Write hata: {ex.StackTrace}");
-                MessageBox.Show($"Yazma hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            WritePid(PidAxis.Roll, new PIDController(
+            (float)NumericPR.Value,
+            (float)NumericIR.Value,
+            (float)NumericDR.Value,
+            (float)NumericEXTRAR.Value
+        ));
         }
         private void ButtonPitchWrite_Click(object sender, EventArgs e)
         {
-            if (serialPort == null || !serialPort.IsOpen)
-            {
-                MessageBox.Show("Seri port bağlantısı yok! Önce 'Connect' butonuna basın.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            try
-            {
-                Console.WriteLine("PID yazma başlıyor...");
-
-                PIDController pitchGains = new PIDController((float)NumericPP.Value, (float)NumericIP.Value, (float)NumericDP.Value);
-                byte[] pitchPacket = PID.EncodePidWrite(2, pitchGains);
-                serialPort.Write(pitchPacket, 0, 20);
-                Console.WriteLine($"Pitch yazıldı FW2 ([2]=0x02) - Hex: {BitConverter.ToString(pitchPacket)} - P={pitchGains.P:F2} I={pitchGains.I:F2} D={pitchGains.D:F2}");
-
-                System.Threading.Thread.Sleep(1000);
-                Console.WriteLine("Yazma sonrası read-back başlıyor...");
-                ButtonPitchRefresh_Click(sender, e);
-
-                MessageBox.Show("PID'ler yazıldı ve yeniden yüklendi! Kartı resetle, Refresh ile kalıcı mı kontrol et.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Write hata: {ex.StackTrace}");
-                MessageBox.Show($"Yazma hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            WritePid(PidAxis.Pitch, new PIDController(
+            (float)NumericPP.Value,
+            (float)NumericIP.Value,
+            (float)NumericDP.Value,
+            (float)NumericIEXTRAP.Value
+        ));
         }
         private void ButtonYawWrite_Click(object sender, EventArgs e)
         {
-            if (serialPort == null || !serialPort.IsOpen)
-            {
-                MessageBox.Show("Seri port bağlantısı yok! Önce 'Connect' butonuna basın.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            try
-            {
-                Console.WriteLine("PID yazma başlıyor...");
-
-                PIDController yawGains = new PIDController((float)NumericPY.Value, (float)NumericIY.Value, (float)NumericDY.Value);
-                byte[] yawPacket = PID.EncodePidWrite(5, yawGains);
-                serialPort.Write(yawPacket, 0, 20);
-                Console.WriteLine($"Yaw yazıldı FW5 ([2]=0x05) - Hex: {BitConverter.ToString(yawPacket)} - P={yawGains.P:F2} I={yawGains.I:F2} D={yawGains.D:F2}");
-
-                System.Threading.Thread.Sleep(1000);
-                Console.WriteLine("Yazma sonrası read-back başlıyor...");
-                ButtonYawRefresh_Click(sender, e);
-
-                MessageBox.Show("PID'ler yazıldı ve yeniden yüklendi! Kartı resetle, Refresh ile kalıcı mı kontrol et.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Write hata: {ex.StackTrace}");
-                MessageBox.Show($"Yazma hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            WritePid(PidAxis.Yaw, new PIDController(
+            (float)NumericPY.Value,
+            (float)NumericIY.Value,
+            (float)NumericDY.Value,
+            (float)NumericEXTRAY.Value
+        ));
         }
+
+        private void ButtonHeightWrite_Click(object sender, EventArgs e)
+        {
+            WritePid(PidAxis.Height, new PIDController(
+            (float)NumericPH.Value,
+            (float)NumericIH.Value,
+            (float)NumericDH.Value,
+            (float)NumericEXTRAH.Value
+               ));
+        }
+
+        private void ButtonNorthWrite_Click(object sender, EventArgs e)
+        {
+            WritePid(PidAxis.North, new PIDController(
+            (float)NumericPN.Value,
+            (float)NumericIN.Value,
+            (float)NumericDN.Value,
+            (float)NumericEXTRAN.Value
+               ));
+        }
+
+        private void ButtonEastWrite_Click(object sender, EventArgs e)
+        {
+            WritePid(PidAxis.East, new PIDController(
+            (float)NumericPE.Value,
+            (float)NumericIE.Value,
+            (float)NumericDE.Value,
+            (float)NumericEXTRAE.Value
+               ));
+        }
+
         private void ButtonRollRefresh_Click(object sender, EventArgs e)
         {
-            if (serialPort == null || !serialPort.IsOpen)
-            {
-                MessageBox.Show("Seri port bağlantısı yok!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (PID == null)
-            {
-                MessageBox.Show("PID nesnesi başlatılmamış! Uygulamayı yeniden başlatın.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                byte uiId = 0; // Roll
-                byte fwId = GetFwIdFromUi(uiId);
-                byte[] request = PID.EncodePidReadRequest(fwId);
-                serialPort.Write(request, 0, request.Length);
-
-                Console.WriteLine($"Roll (UI{uiId}, FW{fwId}) okuma isteği gönderildi - {BitConverter.ToString(request)}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Roll okuma hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ReadPid(PidAxis.Roll);
         }
         private void ButtonPitchRefresh_Click(object sender, EventArgs e)
         {
-            if (serialPort == null || !serialPort.IsOpen)
-            {
-                MessageBox.Show("Seri port bağlantısı yok!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (PID == null)
-            {
-                MessageBox.Show("PID nesnesi başlatılmamış! Uygulamayı yeniden başlatın.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            try
-            {
-                byte uiId = 1; // Pitch
-                byte fwId = GetFwIdFromUi(uiId);
-                byte[] request = PID.EncodePidReadRequest(fwId);
-                serialPort.Write(request, 0, request.Length);
-
-                Console.WriteLine($"Pitch (UI{uiId}, FW{fwId}) okuma isteği gönderildi - {BitConverter.ToString(request)}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Pitch okuma hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ReadPid(PidAxis.Pitch);
         }
         private void ButtonYawRefresh_Click(object sender, EventArgs e)
         {
-            if (serialPort == null || !serialPort.IsOpen)
-            {
-                MessageBox.Show("Seri port bağlantısı yok!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (PID == null)
-            {
-                MessageBox.Show("PID nesnesi başlatılmamış! Uygulamayı yeniden başlatın.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            try
-            {
-                byte uiId = 2; // Yaw
-                byte fwId = GetFwIdFromUi(uiId);
-                byte[] request = PID.EncodePidReadRequest(fwId);
-                serialPort.Write(request, 0, request.Length);
-
-                Console.WriteLine($"Yaw (UI{uiId}, FW{fwId}) okuma isteği gönderildi - {BitConverter.ToString(request)}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Yaw okuma hatası: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ReadPid(PidAxis.Yaw);
         }
+
+        private void ButtonEastRefresh_Click(object sender, EventArgs e)
+        {
+            ReadPid(PidAxis.East);
+        }
+
+        private void ButtonNorthRefresh_Click(object sender, EventArgs e)
+        {
+            ReadPid(PidAxis.North);
+        }
+
+        private void ButtonHeightRefresh_Click(object sender, EventArgs e)
+        {
+            ReadPid(PidAxis.Height);
+        }
+
+
+
+
         #endregion
 
         #region Info

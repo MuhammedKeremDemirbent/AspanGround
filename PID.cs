@@ -1,4 +1,5 @@
 ﻿using System;
+using static AspanGround_2.AspanGround;
 
 // PID kontrolör yapısı ve işlevleri
 
@@ -9,16 +10,18 @@ namespace AspanGround_2
         public float P;
         public float I;
         public float D;
-        public float IMAX;
-        public float FF;
+        public float Extra;
+        //public float IMAX;
+        //public float FF;
 
-        public PIDController(float p = 0, float i = 0, float d = 0, float imax = 0, float ff = 0)
+        public PIDController(float p = 0, float i = 0, float d = 0, float extra = 0)
         {
             P = p;
             I = i;
             D = d;
-            IMAX = imax;
-            FF = ff;
+            Extra = extra;
+            //IMAX = imax;
+            //FF = ff;
         }
     }
 
@@ -27,17 +30,23 @@ namespace AspanGround_2
         
         public PIDController ParsePid(byte[] packet, byte id)
         {
-            float p = BitConverter.ToSingle(packet, 3);   // *** DEĞİŞTİR: P: byte 3-6 (firmware uyumlu)
-            float i = BitConverter.ToSingle(packet, 7);   // I: byte 7-10
-            float d = BitConverter.ToSingle(packet, 11);  // D: byte 11-14
+            if (packet == null || packet.Length < 20)
+                throw new Exception("Geçersiz PID paketi");
+
+
+            float p = BitConverter.ToSingle(packet, 4);
+            float i = BitConverter.ToSingle(packet, 8);
+            float d = BitConverter.ToSingle(packet, 12);
+            float extra = BitConverter.ToSingle(packet, 16);
 
             return new PIDController
             {
                 P = p,
                 I = i,
                 D = d,
-                IMAX = 0f,
-                FF = 0f
+                Extra = extra,
+                //IMAX = 0f,
+                //FF = 0f
             };
         }
 
@@ -45,39 +54,43 @@ namespace AspanGround_2
         public byte[] EncodePidReadRequest(byte fwId)  // fwId: 0-5 single, 6=hepsi
         {
             byte[] packet = new byte[20];
-            packet[0] = 0x47;  // 'G'
-            packet[1] = 0x53;  // 'S'
-            packet[2] = 0x10;  // Read komutu
-            packet[3] = fwId;  // PID ID
+            packet[0] = 0x46;  
+            packet[1] = 0x43;  
+            packet[2] = (byte)PacketType.PidRead;
+            packet[3] = fwId;
             // [4-18]: 0x00
             for (int i = 4; i < 19; i++) packet[i] = 0x00;
 
             // Checksum
-            byte sum = 0;
-            for (int j = 0; j <= 18; j++) sum += packet[j];
-            packet[19] = (byte)(0xFF - sum);
+            byte chk = 0xFF;
+            for (int i = 0; i < 19; i++)
+                chk -= packet[i];
+
+            packet[19] = chk;
 
             return packet;
         }
 
-        // Yeni: PID Yazma Paketi Oluştur (header 'G' 'S', [2]=fwId, data [3]=P)
+      
         public byte[] EncodePidWrite(byte fwId, PIDController gains)
         {
             byte[] packet = new byte[20];
-            packet[0] = 0x47;  // 'G'
-            packet[1] = 0x53;  // 'S'
-            packet[2] = fwId;  // Write: [2]=ID (0-5)
-            // Float'ları byte'a (little-endian), ama P [3-6], I [7-10], D [11-14]
-            BitConverter.GetBytes(gains.P).CopyTo(packet, 3);  // P: 3-6 (firmware &buf[3])
-            BitConverter.GetBytes(gains.I).CopyTo(packet, 7);  // I: 7-10
-            BitConverter.GetBytes(gains.D).CopyTo(packet, 11); // D: 11-14
-            // [15-18]: 0x00
-            packet[15] = packet[16] = packet[17] = packet[18] = 0x00;
+            packet[0] = 0x46;  
+            packet[1] = 0x43;
+            packet[2] = (byte)PacketType.PidWrite;
+            packet[3] = fwId;
+
+            BitConverter.GetBytes(gains.P).CopyTo(packet, 4);
+            BitConverter.GetBytes(gains.I).CopyTo(packet, 8);
+            BitConverter.GetBytes(gains.D).CopyTo(packet, 12);
+            BitConverter.GetBytes(gains.Extra).CopyTo(packet, 16);
 
             // Checksum
-            byte sum = 0;
-            for (int j = 0; j <= 18; j++) sum += packet[j];
-            packet[19] = (byte)(0xFF - sum);
+            byte chk = 0xFF;
+            for (int i = 0; i < 19; i++)
+                chk -= packet[i];
+
+            packet[19] = chk;
 
             return packet;
         }

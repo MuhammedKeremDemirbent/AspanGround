@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AspanGround));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelUpper = new System.Windows.Forms.Panel();
             this.ButtonDisconnect = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonConnect = new Guna.UI2.WinForms.Guna2Button();
@@ -106,24 +106,57 @@
             this.lblywstpnt = new System.Windows.Forms.Label();
             this.lblrllstpnt = new System.Windows.Forms.Label();
             this.tabPagePID = new System.Windows.Forms.TabPage();
+            this.btnWriteAll = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefreshAll = new Guna.UI2.WinForms.Guna2Button();
+            this.groupBoxRateNorth = new System.Windows.Forms.GroupBox();
+            this.ButtonNorthRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonNorthWrite = new Guna.UI2.WinForms.Guna2Button();
+            this.NumericEXTRAN = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.NumericPN = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NumericDN = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.NumericIN = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBoxRateEast = new System.Windows.Forms.GroupBox();
+            this.ButtonEastRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonEastWrite = new Guna.UI2.WinForms.Guna2Button();
+            this.NumericEXTRAE = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.NumericPE = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.NumericDE = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.NumericIE = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBoxRateHeight = new System.Windows.Forms.GroupBox();
+            this.ButtonHeightRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonHeightWrite = new Guna.UI2.WinForms.Guna2Button();
+            this.NumericEXTRAH = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.NumericPH = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NumericDH = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.NumericIH = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBoxRateYaw = new System.Windows.Forms.GroupBox();
             this.ButtonYawRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonYawWrite = new Guna.UI2.WinForms.Guna2Button();
-            this.NumericFILTY = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.NumericIMAXY = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.NumericEXTRAY = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.NumericPY = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelPY = new System.Windows.Forms.Label();
             this.NumericDY = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelIY = new System.Windows.Forms.Label();
             this.NumericIY = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelDY = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.labelIMAXY = new System.Windows.Forms.Label();
-            this.labelFILTY = new System.Windows.Forms.Label();
             this.groupBoxRatePitch = new System.Windows.Forms.GroupBox();
             this.ButtonPitchRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonPitchWrite = new Guna.UI2.WinForms.Guna2Button();
-            this.NumericFILTP = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.NumericIMAXP = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.NumericIEXTRAP = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.NumericPP = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelPP = new System.Windows.Forms.Label();
             this.NumericDP = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -131,12 +164,10 @@
             this.NumericIP = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelDP = new System.Windows.Forms.Label();
             this.labelIMAXP = new System.Windows.Forms.Label();
-            this.labelFILTP = new System.Windows.Forms.Label();
             this.groupBoxRateRoll = new System.Windows.Forms.GroupBox();
             this.ButtonRollRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonRollWrite = new Guna.UI2.WinForms.Guna2Button();
-            this.NumericFILTR = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.NumericIMAXR = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.NumericEXTRAR = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.NumericPR = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelPR = new System.Windows.Forms.Label();
             this.NumericDR = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -144,7 +175,6 @@
             this.NumericIR = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.labelDR = new System.Windows.Forms.Label();
             this.labelIMAXR = new System.Windows.Forms.Label();
-            this.labelFILTR = new System.Windows.Forms.Label();
             this.tabPageINFO = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBoxMail = new System.Windows.Forms.PictureBox();
@@ -168,21 +198,33 @@
             this.tabPageGRAPH.SuspendLayout();
             this.tabPageDATA.SuspendLayout();
             this.tabPagePID.SuspendLayout();
+            this.groupBoxRateNorth.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericDN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIN)).BeginInit();
+            this.groupBoxRateEast.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericPE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericDE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIE)).BeginInit();
+            this.groupBoxRateHeight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericPH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIH)).BeginInit();
             this.groupBoxRateYaw.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericFILTY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericIMAXY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericDY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericIY)).BeginInit();
             this.groupBoxRatePitch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericFILTP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericIMAXP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIEXTRAP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericDP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericIP)).BeginInit();
             this.groupBoxRateRoll.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericFILTR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericIMAXR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericDR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericIR)).BeginInit();
@@ -207,7 +249,7 @@
             this.panelUpper.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUpper.Location = new System.Drawing.Point(0, 0);
             this.panelUpper.Name = "panelUpper";
-            this.panelUpper.Size = new System.Drawing.Size(1924, 104);
+            this.panelUpper.Size = new System.Drawing.Size(1969, 104);
             this.panelUpper.TabIndex = 3;
             // 
             // ButtonDisconnect
@@ -224,7 +266,7 @@
             this.ButtonDisconnect.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ButtonDisconnect.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.ButtonDisconnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ButtonDisconnect.Location = new System.Drawing.Point(1616, 19);
+            this.ButtonDisconnect.Location = new System.Drawing.Point(1661, 19);
             this.ButtonDisconnect.Name = "ButtonDisconnect";
             this.ButtonDisconnect.PressedColor = System.Drawing.Color.MintCream;
             this.ButtonDisconnect.Size = new System.Drawing.Size(254, 62);
@@ -247,7 +289,7 @@
             this.ButtonConnect.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.ButtonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ButtonConnect.IndicateFocus = true;
-            this.ButtonConnect.Location = new System.Drawing.Point(1378, 19);
+            this.ButtonConnect.Location = new System.Drawing.Point(1423, 19);
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.PressedColor = System.Drawing.Color.MintCream;
             this.ButtonConnect.Size = new System.Drawing.Size(217, 62);
@@ -270,7 +312,7 @@
             this.ComboBoxPorts.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.ComboBoxPorts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ComboBoxPorts.ItemHeight = 30;
-            this.ComboBoxPorts.Location = new System.Drawing.Point(1179, 32);
+            this.ComboBoxPorts.Location = new System.Drawing.Point(1224, 32);
             this.ComboBoxPorts.Name = "ComboBoxPorts";
             this.ComboBoxPorts.Size = new System.Drawing.Size(172, 36);
             this.ComboBoxPorts.TabIndex = 64;
@@ -296,7 +338,7 @@
             "57600"});
             this.ComboBoxBaudRates.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ComboBoxBaudRates.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ComboBoxBaudRates.Location = new System.Drawing.Point(959, 32);
+            this.ComboBoxBaudRates.Location = new System.Drawing.Point(1004, 32);
             this.ComboBoxBaudRates.Name = "ComboBoxBaudRates";
             this.ComboBoxBaudRates.Size = new System.Drawing.Size(172, 36);
             this.ComboBoxBaudRates.TabIndex = 62;
@@ -320,7 +362,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxGrey.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxGrey.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGrey.Image")));
-            this.pictureBoxGrey.Location = new System.Drawing.Point(642, 34);
+            this.pictureBoxGrey.Location = new System.Drawing.Point(687, 34);
             this.pictureBoxGrey.Name = "pictureBoxGrey";
             this.pictureBoxGrey.Size = new System.Drawing.Size(32, 30);
             this.pictureBoxGrey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -333,7 +375,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxGreen.BackColor = System.Drawing.Color.DimGray;
             this.pictureBoxGreen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGreen.Image")));
-            this.pictureBoxGreen.Location = new System.Drawing.Point(642, 34);
+            this.pictureBoxGreen.Location = new System.Drawing.Point(687, 34);
             this.pictureBoxGreen.Name = "pictureBoxGreen";
             this.pictureBoxGreen.Size = new System.Drawing.Size(32, 30);
             this.pictureBoxGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -348,7 +390,7 @@
             this.labelNoConnection.BackColor = System.Drawing.Color.Transparent;
             this.labelNoConnection.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.labelNoConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.labelNoConnection.Location = new System.Drawing.Point(680, 32);
+            this.labelNoConnection.Location = new System.Drawing.Point(725, 32);
             this.labelNoConnection.Name = "labelNoConnection";
             this.labelNoConnection.Size = new System.Drawing.Size(197, 31);
             this.labelNoConnection.TabIndex = 5;
@@ -362,7 +404,7 @@
             this.labelConnected.BackColor = System.Drawing.Color.Transparent;
             this.labelConnected.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.labelConnected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.labelConnected.Location = new System.Drawing.Point(680, 32);
+            this.labelConnected.Location = new System.Drawing.Point(725, 32);
             this.labelConnected.Name = "labelConnected";
             this.labelConnected.Size = new System.Drawing.Size(145, 31);
             this.labelConnected.TabIndex = 6;
@@ -621,7 +663,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 104);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1924, 951);
+            this.TabControl.Size = new System.Drawing.Size(1969, 949);
             this.TabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.TabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.TabControl.TabButtonHoverState.Font = new System.Drawing.Font("Nirmala UI Semilight", 16.2F);
@@ -649,7 +691,7 @@
             this.tabPageWATCH.Location = new System.Drawing.Point(4, 64);
             this.tabPageWATCH.Name = "tabPageWATCH";
             this.tabPageWATCH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWATCH.Size = new System.Drawing.Size(1916, 883);
+            this.tabPageWATCH.Size = new System.Drawing.Size(1961, 881);
             this.tabPageWATCH.TabIndex = 0;
             this.tabPageWATCH.Text = "WATCH";
             // 
@@ -668,16 +710,16 @@
             this.panelMiddleAbove.RowCount = 2;
             this.panelMiddleAbove.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.panelMiddleAbove.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelMiddleAbove.Size = new System.Drawing.Size(1910, 877);
+            this.panelMiddleAbove.Size = new System.Drawing.Size(1955, 875);
             this.panelMiddleAbove.TabIndex = 37;
             // 
             // panelBelow
             // 
             this.panelBelow.Controls.Add(this.panelBottomLeft);
             this.panelBelow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBelow.Location = new System.Drawing.Point(3, 660);
+            this.panelBelow.Location = new System.Drawing.Point(3, 659);
             this.panelBelow.Name = "panelBelow";
-            this.panelBelow.Size = new System.Drawing.Size(758, 214);
+            this.panelBelow.Size = new System.Drawing.Size(776, 213);
             this.panelBelow.TabIndex = 40;
             // 
             // panelBottomLeft
@@ -685,7 +727,7 @@
             this.panelBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBottomLeft.Location = new System.Drawing.Point(0, 0);
             this.panelBottomLeft.Name = "panelBottomLeft";
-            this.panelBottomLeft.Size = new System.Drawing.Size(758, 214);
+            this.panelBottomLeft.Size = new System.Drawing.Size(776, 213);
             this.panelBottomLeft.TabIndex = 0;
             // 
             // panelLeft
@@ -696,7 +738,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLeft.Location = new System.Drawing.Point(3, 3);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(758, 651);
+            this.panelLeft.Size = new System.Drawing.Size(776, 650);
             this.panelLeft.TabIndex = 41;
             // 
             // ButtonDeleteWaypoint
@@ -714,7 +756,7 @@
             this.ButtonDeleteWaypoint.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDeleteWaypoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ButtonDeleteWaypoint.IndicateFocus = true;
-            this.ButtonDeleteWaypoint.Location = new System.Drawing.Point(573, 517);
+            this.ButtonDeleteWaypoint.Location = new System.Drawing.Point(591, 516);
             this.ButtonDeleteWaypoint.Name = "ButtonDeleteWaypoint";
             this.ButtonDeleteWaypoint.PressedColor = System.Drawing.Color.MintCream;
             this.ButtonDeleteWaypoint.Size = new System.Drawing.Size(160, 114);
@@ -744,19 +786,19 @@
             this.dataGridViewWaypoints.AllowUserToDeleteRows = false;
             this.dataGridViewWaypoints.AllowUserToResizeColumns = false;
             this.dataGridViewWaypoints.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridViewWaypoints.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.dataGridViewWaypoints.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewWaypoints.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.dataGridViewWaypoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dataGridViewWaypoints.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewWaypoints.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewWaypoints.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewWaypoints.ColumnHeadersHeight = 35;
             this.dataGridViewWaypoints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridViewWaypoints.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -765,33 +807,33 @@
             this.Altitude,
             this.Longitude,
             this.Latitude});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewWaypoints.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewWaypoints.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewWaypoints.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewWaypoints.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.dataGridViewWaypoints.Location = new System.Drawing.Point(767, 660);
+            this.dataGridViewWaypoints.Location = new System.Drawing.Point(785, 659);
             this.dataGridViewWaypoints.Name = "dataGridViewWaypoints";
             this.dataGridViewWaypoints.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewWaypoints.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewWaypoints.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewWaypoints.RowHeadersVisible = false;
             this.dataGridViewWaypoints.RowHeadersWidth = 51;
             this.dataGridViewWaypoints.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Snow;
             this.dataGridViewWaypoints.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewWaypoints.RowTemplate.Height = 24;
-            this.dataGridViewWaypoints.Size = new System.Drawing.Size(1140, 214);
+            this.dataGridViewWaypoints.Size = new System.Drawing.Size(1167, 213);
             this.dataGridViewWaypoints.TabIndex = 43;
             this.dataGridViewWaypoints.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewWaypoints.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -859,9 +901,9 @@
             this.webViewMap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.webViewMap.DefaultBackgroundColor = System.Drawing.Color.Transparent;
             this.webViewMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webViewMap.Location = new System.Drawing.Point(767, 3);
+            this.webViewMap.Location = new System.Drawing.Point(785, 3);
             this.webViewMap.Name = "webViewMap";
-            this.webViewMap.Size = new System.Drawing.Size(1140, 651);
+            this.webViewMap.Size = new System.Drawing.Size(1167, 650);
             this.webViewMap.TabIndex = 38;
             this.webViewMap.ZoomFactor = 1D;
             this.webViewMap.WebMessageReceived += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs>(this.webViewMap_WebMessageReceived);
@@ -885,7 +927,7 @@
             this.tabPageGRAPH.Location = new System.Drawing.Point(4, 64);
             this.tabPageGRAPH.Name = "tabPageGRAPH";
             this.tabPageGRAPH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGRAPH.Size = new System.Drawing.Size(1916, 883);
+            this.tabPageGRAPH.Size = new System.Drawing.Size(1961, 881);
             this.tabPageGRAPH.TabIndex = 1;
             this.tabPageGRAPH.Text = "GRAPH";
             // 
@@ -895,7 +937,7 @@
             this.radioNone.AutoSize = true;
             this.radioNone.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioNone.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioNone.Location = new System.Drawing.Point(542, 76);
+            this.radioNone.Location = new System.Drawing.Point(587, 76);
             this.radioNone.Name = "radioNone";
             this.radioNone.Size = new System.Drawing.Size(95, 39);
             this.radioNone.TabIndex = 96;
@@ -910,7 +952,7 @@
             this.radioYawSetpoint.AutoSize = true;
             this.radioYawSetpoint.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioYawSetpoint.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioYawSetpoint.Location = new System.Drawing.Point(297, 121);
+            this.radioYawSetpoint.Location = new System.Drawing.Point(342, 121);
             this.radioYawSetpoint.Name = "radioYawSetpoint";
             this.radioYawSetpoint.Size = new System.Drawing.Size(178, 39);
             this.radioYawSetpoint.TabIndex = 95;
@@ -925,7 +967,7 @@
             this.radioPitchSetpoint.AutoSize = true;
             this.radioPitchSetpoint.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioPitchSetpoint.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioPitchSetpoint.Location = new System.Drawing.Point(300, 76);
+            this.radioPitchSetpoint.Location = new System.Drawing.Point(345, 76);
             this.radioPitchSetpoint.Name = "radioPitchSetpoint";
             this.radioPitchSetpoint.Size = new System.Drawing.Size(188, 39);
             this.radioPitchSetpoint.TabIndex = 94;
@@ -940,7 +982,7 @@
             this.radioRollSetpoint.AutoSize = true;
             this.radioRollSetpoint.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioRollSetpoint.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioRollSetpoint.Location = new System.Drawing.Point(299, 31);
+            this.radioRollSetpoint.Location = new System.Drawing.Point(344, 31);
             this.radioRollSetpoint.Name = "radioRollSetpoint";
             this.radioRollSetpoint.Size = new System.Drawing.Size(174, 39);
             this.radioRollSetpoint.TabIndex = 93;
@@ -955,7 +997,7 @@
             this.radioRollPitch.AutoSize = true;
             this.radioRollPitch.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioRollPitch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioRollPitch.Location = new System.Drawing.Point(554, 31);
+            this.radioRollPitch.Location = new System.Drawing.Point(599, 31);
             this.radioRollPitch.Name = "radioRollPitch";
             this.radioRollPitch.Size = new System.Drawing.Size(137, 39);
             this.radioRollPitch.TabIndex = 92;
@@ -970,7 +1012,7 @@
             this.radioYaw.AutoSize = true;
             this.radioYaw.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioYaw.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioYaw.Location = new System.Drawing.Point(107, 121);
+            this.radioYaw.Location = new System.Drawing.Point(152, 121);
             this.radioYaw.Name = "radioYaw";
             this.radioYaw.Size = new System.Drawing.Size(79, 39);
             this.radioYaw.TabIndex = 91;
@@ -985,7 +1027,7 @@
             this.radioPitch.AutoSize = true;
             this.radioPitch.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioPitch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioPitch.Location = new System.Drawing.Point(110, 76);
+            this.radioPitch.Location = new System.Drawing.Point(155, 76);
             this.radioPitch.Name = "radioPitch";
             this.radioPitch.Size = new System.Drawing.Size(89, 39);
             this.radioPitch.TabIndex = 90;
@@ -1000,7 +1042,7 @@
             this.radioRoll.AutoSize = true;
             this.radioRoll.Font = new System.Drawing.Font("Nirmala UI Semilight", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioRoll.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioRoll.Location = new System.Drawing.Point(109, 31);
+            this.radioRoll.Location = new System.Drawing.Point(154, 31);
             this.radioRoll.Name = "radioRoll";
             this.radioRoll.Size = new System.Drawing.Size(75, 39);
             this.radioRoll.TabIndex = 89;
@@ -1024,7 +1066,7 @@
             this.ButtonOpenFolder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ButtonOpenFolder.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
             this.ButtonOpenFolder.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ButtonOpenFolder.Location = new System.Drawing.Point(786, 152);
+            this.ButtonOpenFolder.Location = new System.Drawing.Point(831, 152);
             this.ButtonOpenFolder.Name = "ButtonOpenFolder";
             this.ButtonOpenFolder.PressedColor = System.Drawing.Color.Teal;
             this.ButtonOpenFolder.Size = new System.Drawing.Size(255, 53);
@@ -1049,7 +1091,7 @@
             this.ButtonSaveLog.FillColor = System.Drawing.Color.Transparent;
             this.ButtonSaveLog.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
             this.ButtonSaveLog.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ButtonSaveLog.Location = new System.Drawing.Point(786, 92);
+            this.ButtonSaveLog.Location = new System.Drawing.Point(831, 92);
             this.ButtonSaveLog.Name = "ButtonSaveLog";
             this.ButtonSaveLog.PressedColor = System.Drawing.Color.Teal;
             this.ButtonSaveLog.Size = new System.Drawing.Size(255, 54);
@@ -1072,7 +1114,7 @@
             this.ButtonStartLog.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ButtonStartLog.Font = new System.Drawing.Font("Nirmala UI", 15F, System.Drawing.FontStyle.Bold);
             this.ButtonStartLog.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ButtonStartLog.Location = new System.Drawing.Point(786, 31);
+            this.ButtonStartLog.Location = new System.Drawing.Point(831, 31);
             this.ButtonStartLog.Name = "ButtonStartLog";
             this.ButtonStartLog.PressedColor = System.Drawing.Color.Teal;
             this.ButtonStartLog.Size = new System.Drawing.Size(255, 55);
@@ -1116,7 +1158,7 @@
             this.tabPageDATA.Location = new System.Drawing.Point(4, 64);
             this.tabPageDATA.Name = "tabPageDATA";
             this.tabPageDATA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDATA.Size = new System.Drawing.Size(1916, 883);
+            this.tabPageDATA.Size = new System.Drawing.Size(1961, 881);
             this.tabPageDATA.TabIndex = 2;
             this.tabPageDATA.Text = "DATA";
             // 
@@ -1246,35 +1288,552 @@
             // tabPagePID
             // 
             this.tabPagePID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.tabPagePID.Controls.Add(this.btnWriteAll);
+            this.tabPagePID.Controls.Add(this.btnRefreshAll);
+            this.tabPagePID.Controls.Add(this.groupBoxRateNorth);
+            this.tabPagePID.Controls.Add(this.groupBoxRateEast);
+            this.tabPagePID.Controls.Add(this.groupBoxRateHeight);
             this.tabPagePID.Controls.Add(this.groupBoxRateYaw);
             this.tabPagePID.Controls.Add(this.groupBoxRatePitch);
             this.tabPagePID.Controls.Add(this.groupBoxRateRoll);
             this.tabPagePID.Location = new System.Drawing.Point(4, 64);
             this.tabPagePID.Name = "tabPagePID";
             this.tabPagePID.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePID.Size = new System.Drawing.Size(1916, 883);
+            this.tabPagePID.Size = new System.Drawing.Size(1961, 881);
             this.tabPagePID.TabIndex = 3;
             this.tabPagePID.Text = "PID";
+            // 
+            // btnWriteAll
+            // 
+            this.btnWriteAll.Animated = true;
+            this.btnWriteAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnWriteAll.BorderRadius = 10;
+            this.btnWriteAll.BorderThickness = 2;
+            this.btnWriteAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnWriteAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnWriteAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnWriteAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnWriteAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.btnWriteAll.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.btnWriteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnWriteAll.IndicateFocus = true;
+            this.btnWriteAll.Location = new System.Drawing.Point(418, 770);
+            this.btnWriteAll.Name = "btnWriteAll";
+            this.btnWriteAll.PressedColor = System.Drawing.Color.MintCream;
+            this.btnWriteAll.Size = new System.Drawing.Size(204, 81);
+            this.btnWriteAll.TabIndex = 79;
+            this.btnWriteAll.Text = "Write All";
+            // 
+            // btnRefreshAll
+            // 
+            this.btnRefreshAll.Animated = true;
+            this.btnRefreshAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnRefreshAll.BorderRadius = 10;
+            this.btnRefreshAll.BorderThickness = 2;
+            this.btnRefreshAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefreshAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefreshAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefreshAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefreshAll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.btnRefreshAll.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.btnRefreshAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.btnRefreshAll.IndicateFocus = true;
+            this.btnRefreshAll.Location = new System.Drawing.Point(650, 770);
+            this.btnRefreshAll.Name = "btnRefreshAll";
+            this.btnRefreshAll.PressedColor = System.Drawing.Color.MintCream;
+            this.btnRefreshAll.Size = new System.Drawing.Size(204, 81);
+            this.btnRefreshAll.TabIndex = 80;
+            this.btnRefreshAll.Text = "Refresh All";
+            // 
+            // groupBoxRateNorth
+            // 
+            this.groupBoxRateNorth.Controls.Add(this.ButtonNorthRefresh);
+            this.groupBoxRateNorth.Controls.Add(this.ButtonNorthWrite);
+            this.groupBoxRateNorth.Controls.Add(this.NumericEXTRAN);
+            this.groupBoxRateNorth.Controls.Add(this.NumericPN);
+            this.groupBoxRateNorth.Controls.Add(this.label6);
+            this.groupBoxRateNorth.Controls.Add(this.NumericDN);
+            this.groupBoxRateNorth.Controls.Add(this.label7);
+            this.groupBoxRateNorth.Controls.Add(this.NumericIN);
+            this.groupBoxRateNorth.Controls.Add(this.label8);
+            this.groupBoxRateNorth.Controls.Add(this.label9);
+            this.groupBoxRateNorth.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRateNorth.ForeColor = System.Drawing.Color.Snow;
+            this.groupBoxRateNorth.Location = new System.Drawing.Point(683, 399);
+            this.groupBoxRateNorth.Name = "groupBoxRateNorth";
+            this.groupBoxRateNorth.Size = new System.Drawing.Size(635, 347);
+            this.groupBoxRateNorth.TabIndex = 79;
+            this.groupBoxRateNorth.TabStop = false;
+            this.groupBoxRateNorth.Text = "Rate North";
+            // 
+            // ButtonNorthRefresh
+            // 
+            this.ButtonNorthRefresh.Animated = true;
+            this.ButtonNorthRefresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonNorthRefresh.BorderRadius = 10;
+            this.ButtonNorthRefresh.BorderThickness = 2;
+            this.ButtonNorthRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonNorthRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonNorthRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonNorthRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonNorthRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ButtonNorthRefresh.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.ButtonNorthRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonNorthRefresh.IndicateFocus = true;
+            this.ButtonNorthRefresh.Location = new System.Drawing.Point(412, 230);
+            this.ButtonNorthRefresh.Name = "ButtonNorthRefresh";
+            this.ButtonNorthRefresh.PressedColor = System.Drawing.Color.MintCream;
+            this.ButtonNorthRefresh.Size = new System.Drawing.Size(204, 81);
+            this.ButtonNorthRefresh.TabIndex = 78;
+            this.ButtonNorthRefresh.Text = "Refresh";
+            this.ButtonNorthRefresh.Click += new System.EventHandler(this.ButtonNorthRefresh_Click);
+            // 
+            // ButtonNorthWrite
+            // 
+            this.ButtonNorthWrite.Animated = true;
+            this.ButtonNorthWrite.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonNorthWrite.BorderRadius = 10;
+            this.ButtonNorthWrite.BorderThickness = 2;
+            this.ButtonNorthWrite.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonNorthWrite.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonNorthWrite.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonNorthWrite.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonNorthWrite.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ButtonNorthWrite.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.ButtonNorthWrite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonNorthWrite.IndicateFocus = true;
+            this.ButtonNorthWrite.Location = new System.Drawing.Point(412, 69);
+            this.ButtonNorthWrite.Name = "ButtonNorthWrite";
+            this.ButtonNorthWrite.PressedColor = System.Drawing.Color.MintCream;
+            this.ButtonNorthWrite.Size = new System.Drawing.Size(204, 134);
+            this.ButtonNorthWrite.TabIndex = 78;
+            this.ButtonNorthWrite.Text = "Write Parameters";
+            this.ButtonNorthWrite.Click += new System.EventHandler(this.ButtonNorthWrite_Click);
+            // 
+            // NumericEXTRAN
+            // 
+            this.NumericEXTRAN.BackColor = System.Drawing.Color.Transparent;
+            this.NumericEXTRAN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericEXTRAN.FillColor = System.Drawing.Color.Snow;
+            this.NumericEXTRAN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericEXTRAN.Location = new System.Drawing.Point(192, 231);
+            this.NumericEXTRAN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericEXTRAN.Name = "NumericEXTRAN";
+            this.NumericEXTRAN.Size = new System.Drawing.Size(139, 27);
+            this.NumericEXTRAN.TabIndex = 14;
+            // 
+            // NumericPN
+            // 
+            this.NumericPN.BackColor = System.Drawing.Color.Transparent;
+            this.NumericPN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericPN.FillColor = System.Drawing.Color.Snow;
+            this.NumericPN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericPN.Location = new System.Drawing.Point(192, 69);
+            this.NumericPN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericPN.Name = "NumericPN";
+            this.NumericPN.Size = new System.Drawing.Size(139, 27);
+            this.NumericPN.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(76, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 28);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "P";
+            // 
+            // NumericDN
+            // 
+            this.NumericDN.BackColor = System.Drawing.Color.Transparent;
+            this.NumericDN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericDN.FillColor = System.Drawing.Color.Snow;
+            this.NumericDN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericDN.Location = new System.Drawing.Point(192, 176);
+            this.NumericDN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericDN.Name = "NumericDN";
+            this.NumericDN.Size = new System.Drawing.Size(139, 27);
+            this.NumericDN.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(76, 126);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(17, 28);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "I";
+            // 
+            // NumericIN
+            // 
+            this.NumericIN.BackColor = System.Drawing.Color.Transparent;
+            this.NumericIN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericIN.FillColor = System.Drawing.Color.Snow;
+            this.NumericIN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericIN.Location = new System.Drawing.Point(192, 126);
+            this.NumericIN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericIN.Name = "NumericIN";
+            this.NumericIN.Size = new System.Drawing.Size(139, 27);
+            this.NumericIN.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(76, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 28);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "D";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.Location = new System.Drawing.Point(67, 231);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 28);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Extra";
+            // 
+            // groupBoxRateEast
+            // 
+            this.groupBoxRateEast.Controls.Add(this.ButtonEastRefresh);
+            this.groupBoxRateEast.Controls.Add(this.ButtonEastWrite);
+            this.groupBoxRateEast.Controls.Add(this.NumericEXTRAE);
+            this.groupBoxRateEast.Controls.Add(this.NumericPE);
+            this.groupBoxRateEast.Controls.Add(this.label11);
+            this.groupBoxRateEast.Controls.Add(this.NumericDE);
+            this.groupBoxRateEast.Controls.Add(this.label12);
+            this.groupBoxRateEast.Controls.Add(this.NumericIE);
+            this.groupBoxRateEast.Controls.Add(this.label13);
+            this.groupBoxRateEast.Controls.Add(this.label14);
+            this.groupBoxRateEast.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRateEast.ForeColor = System.Drawing.Color.Snow;
+            this.groupBoxRateEast.Location = new System.Drawing.Point(1330, 399);
+            this.groupBoxRateEast.Name = "groupBoxRateEast";
+            this.groupBoxRateEast.Size = new System.Drawing.Size(635, 347);
+            this.groupBoxRateEast.TabIndex = 80;
+            this.groupBoxRateEast.TabStop = false;
+            this.groupBoxRateEast.Text = "Rate East";
+            // 
+            // ButtonEastRefresh
+            // 
+            this.ButtonEastRefresh.Animated = true;
+            this.ButtonEastRefresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonEastRefresh.BorderRadius = 10;
+            this.ButtonEastRefresh.BorderThickness = 2;
+            this.ButtonEastRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonEastRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonEastRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonEastRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonEastRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ButtonEastRefresh.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.ButtonEastRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonEastRefresh.IndicateFocus = true;
+            this.ButtonEastRefresh.Location = new System.Drawing.Point(412, 230);
+            this.ButtonEastRefresh.Name = "ButtonEastRefresh";
+            this.ButtonEastRefresh.PressedColor = System.Drawing.Color.MintCream;
+            this.ButtonEastRefresh.Size = new System.Drawing.Size(204, 81);
+            this.ButtonEastRefresh.TabIndex = 78;
+            this.ButtonEastRefresh.Text = "Refresh";
+            this.ButtonEastRefresh.Click += new System.EventHandler(this.ButtonEastRefresh_Click);
+            // 
+            // ButtonEastWrite
+            // 
+            this.ButtonEastWrite.Animated = true;
+            this.ButtonEastWrite.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonEastWrite.BorderRadius = 10;
+            this.ButtonEastWrite.BorderThickness = 2;
+            this.ButtonEastWrite.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonEastWrite.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonEastWrite.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonEastWrite.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonEastWrite.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ButtonEastWrite.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.ButtonEastWrite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonEastWrite.IndicateFocus = true;
+            this.ButtonEastWrite.Location = new System.Drawing.Point(412, 69);
+            this.ButtonEastWrite.Name = "ButtonEastWrite";
+            this.ButtonEastWrite.PressedColor = System.Drawing.Color.MintCream;
+            this.ButtonEastWrite.Size = new System.Drawing.Size(204, 134);
+            this.ButtonEastWrite.TabIndex = 78;
+            this.ButtonEastWrite.Text = "Write Parameters";
+            this.ButtonEastWrite.Click += new System.EventHandler(this.ButtonEastWrite_Click);
+            // 
+            // NumericEXTRAE
+            // 
+            this.NumericEXTRAE.BackColor = System.Drawing.Color.Transparent;
+            this.NumericEXTRAE.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericEXTRAE.FillColor = System.Drawing.Color.Snow;
+            this.NumericEXTRAE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericEXTRAE.Location = new System.Drawing.Point(192, 231);
+            this.NumericEXTRAE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericEXTRAE.Name = "NumericEXTRAE";
+            this.NumericEXTRAE.Size = new System.Drawing.Size(139, 27);
+            this.NumericEXTRAE.TabIndex = 14;
+            // 
+            // NumericPE
+            // 
+            this.NumericPE.BackColor = System.Drawing.Color.Transparent;
+            this.NumericPE.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericPE.FillColor = System.Drawing.Color.Snow;
+            this.NumericPE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericPE.Location = new System.Drawing.Point(192, 69);
+            this.NumericPE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericPE.Name = "NumericPE";
+            this.NumericPE.Size = new System.Drawing.Size(139, 27);
+            this.NumericPE.TabIndex = 15;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(76, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(23, 28);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "P";
+            // 
+            // NumericDE
+            // 
+            this.NumericDE.BackColor = System.Drawing.Color.Transparent;
+            this.NumericDE.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericDE.FillColor = System.Drawing.Color.Snow;
+            this.NumericDE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericDE.Location = new System.Drawing.Point(192, 176);
+            this.NumericDE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericDE.Name = "NumericDE";
+            this.NumericDE.Size = new System.Drawing.Size(139, 27);
+            this.NumericDE.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.Location = new System.Drawing.Point(76, 126);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(17, 28);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "I";
+            // 
+            // NumericIE
+            // 
+            this.NumericIE.BackColor = System.Drawing.Color.Transparent;
+            this.NumericIE.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericIE.FillColor = System.Drawing.Color.Snow;
+            this.NumericIE.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericIE.Location = new System.Drawing.Point(192, 126);
+            this.NumericIE.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericIE.Name = "NumericIE";
+            this.NumericIE.Size = new System.Drawing.Size(139, 27);
+            this.NumericIE.TabIndex = 11;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(76, 176);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 28);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "D";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.Control;
+            this.label14.Location = new System.Drawing.Point(67, 231);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(54, 28);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Extra";
+            // 
+            // groupBoxRateHeight
+            // 
+            this.groupBoxRateHeight.Controls.Add(this.ButtonHeightRefresh);
+            this.groupBoxRateHeight.Controls.Add(this.ButtonHeightWrite);
+            this.groupBoxRateHeight.Controls.Add(this.NumericEXTRAH);
+            this.groupBoxRateHeight.Controls.Add(this.NumericPH);
+            this.groupBoxRateHeight.Controls.Add(this.label1);
+            this.groupBoxRateHeight.Controls.Add(this.NumericDH);
+            this.groupBoxRateHeight.Controls.Add(this.label2);
+            this.groupBoxRateHeight.Controls.Add(this.NumericIH);
+            this.groupBoxRateHeight.Controls.Add(this.label3);
+            this.groupBoxRateHeight.Controls.Add(this.label4);
+            this.groupBoxRateHeight.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxRateHeight.ForeColor = System.Drawing.Color.Snow;
+            this.groupBoxRateHeight.Location = new System.Drawing.Point(6, 399);
+            this.groupBoxRateHeight.Name = "groupBoxRateHeight";
+            this.groupBoxRateHeight.Size = new System.Drawing.Size(635, 347);
+            this.groupBoxRateHeight.TabIndex = 17;
+            this.groupBoxRateHeight.TabStop = false;
+            this.groupBoxRateHeight.Text = "Rate Height";
+            // 
+            // ButtonHeightRefresh
+            // 
+            this.ButtonHeightRefresh.Animated = true;
+            this.ButtonHeightRefresh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonHeightRefresh.BorderRadius = 10;
+            this.ButtonHeightRefresh.BorderThickness = 2;
+            this.ButtonHeightRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonHeightRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonHeightRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonHeightRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonHeightRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ButtonHeightRefresh.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.ButtonHeightRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonHeightRefresh.IndicateFocus = true;
+            this.ButtonHeightRefresh.Location = new System.Drawing.Point(412, 230);
+            this.ButtonHeightRefresh.Name = "ButtonHeightRefresh";
+            this.ButtonHeightRefresh.PressedColor = System.Drawing.Color.MintCream;
+            this.ButtonHeightRefresh.Size = new System.Drawing.Size(204, 81);
+            this.ButtonHeightRefresh.TabIndex = 78;
+            this.ButtonHeightRefresh.Text = "Refresh";
+            this.ButtonHeightRefresh.Click += new System.EventHandler(this.ButtonHeightRefresh_Click);
+            // 
+            // ButtonHeightWrite
+            // 
+            this.ButtonHeightWrite.Animated = true;
+            this.ButtonHeightWrite.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonHeightWrite.BorderRadius = 10;
+            this.ButtonHeightWrite.BorderThickness = 2;
+            this.ButtonHeightWrite.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonHeightWrite.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonHeightWrite.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonHeightWrite.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonHeightWrite.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ButtonHeightWrite.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.ButtonHeightWrite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.ButtonHeightWrite.IndicateFocus = true;
+            this.ButtonHeightWrite.Location = new System.Drawing.Point(412, 69);
+            this.ButtonHeightWrite.Name = "ButtonHeightWrite";
+            this.ButtonHeightWrite.PressedColor = System.Drawing.Color.MintCream;
+            this.ButtonHeightWrite.Size = new System.Drawing.Size(204, 134);
+            this.ButtonHeightWrite.TabIndex = 78;
+            this.ButtonHeightWrite.Text = "Write Parameters";
+            this.ButtonHeightWrite.Click += new System.EventHandler(this.ButtonHeightWrite_Click);
+            // 
+            // NumericEXTRAH
+            // 
+            this.NumericEXTRAH.BackColor = System.Drawing.Color.Transparent;
+            this.NumericEXTRAH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericEXTRAH.FillColor = System.Drawing.Color.Snow;
+            this.NumericEXTRAH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericEXTRAH.Location = new System.Drawing.Point(192, 231);
+            this.NumericEXTRAH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericEXTRAH.Name = "NumericEXTRAH";
+            this.NumericEXTRAH.Size = new System.Drawing.Size(139, 27);
+            this.NumericEXTRAH.TabIndex = 14;
+            // 
+            // NumericPH
+            // 
+            this.NumericPH.BackColor = System.Drawing.Color.Transparent;
+            this.NumericPH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericPH.FillColor = System.Drawing.Color.Snow;
+            this.NumericPH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericPH.Location = new System.Drawing.Point(192, 69);
+            this.NumericPH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericPH.Name = "NumericPH";
+            this.NumericPH.Size = new System.Drawing.Size(139, 27);
+            this.NumericPH.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(76, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "P";
+            // 
+            // NumericDH
+            // 
+            this.NumericDH.BackColor = System.Drawing.Color.Transparent;
+            this.NumericDH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericDH.FillColor = System.Drawing.Color.Snow;
+            this.NumericDH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericDH.Location = new System.Drawing.Point(192, 176);
+            this.NumericDH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericDH.Name = "NumericDH";
+            this.NumericDH.Size = new System.Drawing.Size(139, 27);
+            this.NumericDH.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(76, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "I";
+            // 
+            // NumericIH
+            // 
+            this.NumericIH.BackColor = System.Drawing.Color.Transparent;
+            this.NumericIH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericIH.FillColor = System.Drawing.Color.Snow;
+            this.NumericIH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericIH.Location = new System.Drawing.Point(192, 126);
+            this.NumericIH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericIH.Name = "NumericIH";
+            this.NumericIH.Size = new System.Drawing.Size(139, 27);
+            this.NumericIH.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(76, 176);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 28);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "D";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(67, 231);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 28);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Extra";
             // 
             // groupBoxRateYaw
             // 
             this.groupBoxRateYaw.Controls.Add(this.ButtonYawRefresh);
             this.groupBoxRateYaw.Controls.Add(this.ButtonYawWrite);
-            this.groupBoxRateYaw.Controls.Add(this.NumericFILTY);
-            this.groupBoxRateYaw.Controls.Add(this.NumericIMAXY);
+            this.groupBoxRateYaw.Controls.Add(this.NumericEXTRAY);
             this.groupBoxRateYaw.Controls.Add(this.NumericPY);
             this.groupBoxRateYaw.Controls.Add(this.labelPY);
             this.groupBoxRateYaw.Controls.Add(this.NumericDY);
             this.groupBoxRateYaw.Controls.Add(this.labelIY);
             this.groupBoxRateYaw.Controls.Add(this.NumericIY);
             this.groupBoxRateYaw.Controls.Add(this.labelDY);
+            this.groupBoxRateYaw.Controls.Add(this.label5);
             this.groupBoxRateYaw.Controls.Add(this.labelIMAXY);
-            this.groupBoxRateYaw.Controls.Add(this.labelFILTY);
             this.groupBoxRateYaw.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRateYaw.ForeColor = System.Drawing.Color.Snow;
-            this.groupBoxRateYaw.Location = new System.Drawing.Point(763, 421);
+            this.groupBoxRateYaw.Location = new System.Drawing.Point(1330, 6);
             this.groupBoxRateYaw.Name = "groupBoxRateYaw";
-            this.groupBoxRateYaw.Size = new System.Drawing.Size(709, 362);
+            this.groupBoxRateYaw.Size = new System.Drawing.Size(635, 347);
             this.groupBoxRateYaw.TabIndex = 16;
             this.groupBoxRateYaw.TabStop = false;
             this.groupBoxRateYaw.Text = "Rate Yaw";
@@ -1323,29 +1882,17 @@
             this.ButtonYawWrite.Text = "Write Parameters";
             this.ButtonYawWrite.Click += new System.EventHandler(this.ButtonYawWrite_Click);
             // 
-            // NumericFILTY
+            // NumericEXTRAY
             // 
-            this.NumericFILTY.BackColor = System.Drawing.Color.Transparent;
-            this.NumericFILTY.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericFILTY.FillColor = System.Drawing.Color.Snow;
-            this.NumericFILTY.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericFILTY.Location = new System.Drawing.Point(192, 284);
-            this.NumericFILTY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NumericFILTY.Name = "NumericFILTY";
-            this.NumericFILTY.Size = new System.Drawing.Size(139, 27);
-            this.NumericFILTY.TabIndex = 13;
-            // 
-            // NumericIMAXY
-            // 
-            this.NumericIMAXY.BackColor = System.Drawing.Color.Transparent;
-            this.NumericIMAXY.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericIMAXY.FillColor = System.Drawing.Color.Snow;
-            this.NumericIMAXY.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericIMAXY.Location = new System.Drawing.Point(192, 231);
-            this.NumericIMAXY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NumericIMAXY.Name = "NumericIMAXY";
-            this.NumericIMAXY.Size = new System.Drawing.Size(139, 27);
-            this.NumericIMAXY.TabIndex = 14;
+            this.NumericEXTRAY.BackColor = System.Drawing.Color.Transparent;
+            this.NumericEXTRAY.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericEXTRAY.FillColor = System.Drawing.Color.Snow;
+            this.NumericEXTRAY.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericEXTRAY.Location = new System.Drawing.Point(192, 231);
+            this.NumericEXTRAY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericEXTRAY.Name = "NumericEXTRAY";
+            this.NumericEXTRAY.Size = new System.Drawing.Size(139, 27);
+            this.NumericEXTRAY.TabIndex = 14;
             // 
             // NumericPY
             // 
@@ -1416,6 +1963,17 @@
             this.labelDY.TabIndex = 1;
             this.labelDY.Text = "D";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(-1263, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 28);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Extra";
+            // 
             // labelIMAXY
             // 
             this.labelIMAXY.AutoSize = true;
@@ -1423,27 +1981,15 @@
             this.labelIMAXY.ForeColor = System.Drawing.SystemColors.Control;
             this.labelIMAXY.Location = new System.Drawing.Point(67, 231);
             this.labelIMAXY.Name = "labelIMAXY";
-            this.labelIMAXY.Size = new System.Drawing.Size(59, 28);
+            this.labelIMAXY.Size = new System.Drawing.Size(54, 28);
             this.labelIMAXY.TabIndex = 4;
-            this.labelIMAXY.Text = "IMAX";
-            // 
-            // labelFILTY
-            // 
-            this.labelFILTY.AutoSize = true;
-            this.labelFILTY.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFILTY.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelFILTY.Location = new System.Drawing.Point(67, 284);
-            this.labelFILTY.Name = "labelFILTY";
-            this.labelFILTY.Size = new System.Drawing.Size(45, 28);
-            this.labelFILTY.TabIndex = 5;
-            this.labelFILTY.Text = "FILT";
+            this.labelIMAXY.Text = "Extra";
             // 
             // groupBoxRatePitch
             // 
             this.groupBoxRatePitch.Controls.Add(this.ButtonPitchRefresh);
             this.groupBoxRatePitch.Controls.Add(this.ButtonPitchWrite);
-            this.groupBoxRatePitch.Controls.Add(this.NumericFILTP);
-            this.groupBoxRatePitch.Controls.Add(this.NumericIMAXP);
+            this.groupBoxRatePitch.Controls.Add(this.NumericIEXTRAP);
             this.groupBoxRatePitch.Controls.Add(this.NumericPP);
             this.groupBoxRatePitch.Controls.Add(this.labelPP);
             this.groupBoxRatePitch.Controls.Add(this.NumericDP);
@@ -1451,12 +1997,11 @@
             this.groupBoxRatePitch.Controls.Add(this.NumericIP);
             this.groupBoxRatePitch.Controls.Add(this.labelDP);
             this.groupBoxRatePitch.Controls.Add(this.labelIMAXP);
-            this.groupBoxRatePitch.Controls.Add(this.labelFILTP);
             this.groupBoxRatePitch.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRatePitch.ForeColor = System.Drawing.Color.Snow;
-            this.groupBoxRatePitch.Location = new System.Drawing.Point(763, 28);
+            this.groupBoxRatePitch.Location = new System.Drawing.Point(683, 6);
             this.groupBoxRatePitch.Name = "groupBoxRatePitch";
-            this.groupBoxRatePitch.Size = new System.Drawing.Size(709, 362);
+            this.groupBoxRatePitch.Size = new System.Drawing.Size(635, 347);
             this.groupBoxRatePitch.TabIndex = 11;
             this.groupBoxRatePitch.TabStop = false;
             this.groupBoxRatePitch.Text = "Rate Pitch";
@@ -1505,29 +2050,17 @@
             this.ButtonPitchWrite.Text = "Write Parameters";
             this.ButtonPitchWrite.Click += new System.EventHandler(this.ButtonPitchWrite_Click);
             // 
-            // NumericFILTP
+            // NumericIEXTRAP
             // 
-            this.NumericFILTP.BackColor = System.Drawing.Color.Transparent;
-            this.NumericFILTP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericFILTP.FillColor = System.Drawing.Color.Snow;
-            this.NumericFILTP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericFILTP.Location = new System.Drawing.Point(174, 285);
-            this.NumericFILTP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NumericFILTP.Name = "NumericFILTP";
-            this.NumericFILTP.Size = new System.Drawing.Size(139, 27);
-            this.NumericFILTP.TabIndex = 13;
-            // 
-            // NumericIMAXP
-            // 
-            this.NumericIMAXP.BackColor = System.Drawing.Color.Transparent;
-            this.NumericIMAXP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericIMAXP.FillColor = System.Drawing.Color.Snow;
-            this.NumericIMAXP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericIMAXP.Location = new System.Drawing.Point(174, 233);
-            this.NumericIMAXP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NumericIMAXP.Name = "NumericIMAXP";
-            this.NumericIMAXP.Size = new System.Drawing.Size(139, 27);
-            this.NumericIMAXP.TabIndex = 14;
+            this.NumericIEXTRAP.BackColor = System.Drawing.Color.Transparent;
+            this.NumericIEXTRAP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericIEXTRAP.FillColor = System.Drawing.Color.Snow;
+            this.NumericIEXTRAP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericIEXTRAP.Location = new System.Drawing.Point(174, 233);
+            this.NumericIEXTRAP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericIEXTRAP.Name = "NumericIEXTRAP";
+            this.NumericIEXTRAP.Size = new System.Drawing.Size(139, 27);
+            this.NumericIEXTRAP.TabIndex = 14;
             // 
             // NumericPP
             // 
@@ -1605,27 +2138,15 @@
             this.labelIMAXP.ForeColor = System.Drawing.SystemColors.Control;
             this.labelIMAXP.Location = new System.Drawing.Point(60, 232);
             this.labelIMAXP.Name = "labelIMAXP";
-            this.labelIMAXP.Size = new System.Drawing.Size(59, 28);
+            this.labelIMAXP.Size = new System.Drawing.Size(54, 28);
             this.labelIMAXP.TabIndex = 4;
-            this.labelIMAXP.Text = "IMAX";
-            // 
-            // labelFILTP
-            // 
-            this.labelFILTP.AutoSize = true;
-            this.labelFILTP.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFILTP.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelFILTP.Location = new System.Drawing.Point(60, 285);
-            this.labelFILTP.Name = "labelFILTP";
-            this.labelFILTP.Size = new System.Drawing.Size(45, 28);
-            this.labelFILTP.TabIndex = 5;
-            this.labelFILTP.Text = "FILT";
+            this.labelIMAXP.Text = "Extra";
             // 
             // groupBoxRateRoll
             // 
             this.groupBoxRateRoll.Controls.Add(this.ButtonRollRefresh);
             this.groupBoxRateRoll.Controls.Add(this.ButtonRollWrite);
-            this.groupBoxRateRoll.Controls.Add(this.NumericFILTR);
-            this.groupBoxRateRoll.Controls.Add(this.NumericIMAXR);
+            this.groupBoxRateRoll.Controls.Add(this.NumericEXTRAR);
             this.groupBoxRateRoll.Controls.Add(this.NumericPR);
             this.groupBoxRateRoll.Controls.Add(this.labelPR);
             this.groupBoxRateRoll.Controls.Add(this.NumericDR);
@@ -1633,12 +2154,11 @@
             this.groupBoxRateRoll.Controls.Add(this.NumericIR);
             this.groupBoxRateRoll.Controls.Add(this.labelDR);
             this.groupBoxRateRoll.Controls.Add(this.labelIMAXR);
-            this.groupBoxRateRoll.Controls.Add(this.labelFILTR);
             this.groupBoxRateRoll.Font = new System.Drawing.Font("Nirmala UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxRateRoll.ForeColor = System.Drawing.Color.Snow;
-            this.groupBoxRateRoll.Location = new System.Drawing.Point(34, 28);
+            this.groupBoxRateRoll.Location = new System.Drawing.Point(10, 6);
             this.groupBoxRateRoll.Name = "groupBoxRateRoll";
-            this.groupBoxRateRoll.Size = new System.Drawing.Size(709, 362);
+            this.groupBoxRateRoll.Size = new System.Drawing.Size(635, 347);
             this.groupBoxRateRoll.TabIndex = 10;
             this.groupBoxRateRoll.TabStop = false;
             this.groupBoxRateRoll.Text = "Rate Roll";
@@ -1687,29 +2207,17 @@
             this.ButtonRollWrite.Text = "Write Parameters";
             this.ButtonRollWrite.Click += new System.EventHandler(this.ButtonRollWrite_Click);
             // 
-            // NumericFILTR
+            // NumericEXTRAR
             // 
-            this.NumericFILTR.BackColor = System.Drawing.Color.Transparent;
-            this.NumericFILTR.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericFILTR.FillColor = System.Drawing.Color.Snow;
-            this.NumericFILTR.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericFILTR.Location = new System.Drawing.Point(183, 285);
-            this.NumericFILTR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NumericFILTR.Name = "NumericFILTR";
-            this.NumericFILTR.Size = new System.Drawing.Size(139, 27);
-            this.NumericFILTR.TabIndex = 13;
-            // 
-            // NumericIMAXR
-            // 
-            this.NumericIMAXR.BackColor = System.Drawing.Color.Transparent;
-            this.NumericIMAXR.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericIMAXR.FillColor = System.Drawing.Color.Snow;
-            this.NumericIMAXR.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericIMAXR.Location = new System.Drawing.Point(183, 232);
-            this.NumericIMAXR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.NumericIMAXR.Name = "NumericIMAXR";
-            this.NumericIMAXR.Size = new System.Drawing.Size(139, 27);
-            this.NumericIMAXR.TabIndex = 14;
+            this.NumericEXTRAR.BackColor = System.Drawing.Color.Transparent;
+            this.NumericEXTRAR.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericEXTRAR.FillColor = System.Drawing.Color.Snow;
+            this.NumericEXTRAR.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericEXTRAR.Location = new System.Drawing.Point(183, 232);
+            this.NumericEXTRAR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.NumericEXTRAR.Name = "NumericEXTRAR";
+            this.NumericEXTRAR.Size = new System.Drawing.Size(139, 27);
+            this.NumericEXTRAR.TabIndex = 14;
             // 
             // NumericPR
             // 
@@ -1788,20 +2296,9 @@
             this.labelIMAXR.ForeColor = System.Drawing.SystemColors.Control;
             this.labelIMAXR.Location = new System.Drawing.Point(57, 232);
             this.labelIMAXR.Name = "labelIMAXR";
-            this.labelIMAXR.Size = new System.Drawing.Size(59, 28);
+            this.labelIMAXR.Size = new System.Drawing.Size(54, 28);
             this.labelIMAXR.TabIndex = 4;
-            this.labelIMAXR.Text = "IMAX";
-            // 
-            // labelFILTR
-            // 
-            this.labelFILTR.AutoSize = true;
-            this.labelFILTR.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFILTR.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelFILTR.Location = new System.Drawing.Point(57, 285);
-            this.labelFILTR.Name = "labelFILTR";
-            this.labelFILTR.Size = new System.Drawing.Size(45, 28);
-            this.labelFILTR.TabIndex = 5;
-            this.labelFILTR.Text = "FILT";
+            this.labelIMAXR.Text = "Extra";
             // 
             // tabPageINFO
             // 
@@ -1809,7 +2306,7 @@
             this.tabPageINFO.Location = new System.Drawing.Point(4, 64);
             this.tabPageINFO.Name = "tabPageINFO";
             this.tabPageINFO.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageINFO.Size = new System.Drawing.Size(1916, 883);
+            this.tabPageINFO.Size = new System.Drawing.Size(1961, 881);
             this.tabPageINFO.TabIndex = 4;
             this.tabPageINFO.Text = "MISSION";
             // 
@@ -1826,7 +2323,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 64);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1916, 883);
+            this.tabPage1.Size = new System.Drawing.Size(1961, 881);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "INFO";
             // 
@@ -1921,7 +2418,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1969, 1053);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.panelUpper);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1947,24 +2444,39 @@
             this.tabPageGRAPH.PerformLayout();
             this.tabPageDATA.ResumeLayout(false);
             this.tabPagePID.ResumeLayout(false);
+            this.groupBoxRateNorth.ResumeLayout(false);
+            this.groupBoxRateNorth.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericDN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIN)).EndInit();
+            this.groupBoxRateEast.ResumeLayout(false);
+            this.groupBoxRateEast.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericPE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericDE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIE)).EndInit();
+            this.groupBoxRateHeight.ResumeLayout(false);
+            this.groupBoxRateHeight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericPH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIH)).EndInit();
             this.groupBoxRateYaw.ResumeLayout(false);
             this.groupBoxRateYaw.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericFILTY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericIMAXY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericDY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericIY)).EndInit();
             this.groupBoxRatePitch.ResumeLayout(false);
             this.groupBoxRatePitch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericFILTP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericIMAXP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericIEXTRAP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericDP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericIP)).EndInit();
             this.groupBoxRateRoll.ResumeLayout(false);
             this.groupBoxRateRoll.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericFILTR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NumericIMAXR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericEXTRAR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericPR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericDR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericIR)).EndInit();
@@ -2054,20 +2566,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Longitude;
         private System.Windows.Forms.DataGridViewTextBoxColumn Latitude;
         private Microsoft.Web.WebView2.WinForms.WebView2 webViewMap;
-        private System.Windows.Forms.Label labelFILTR;
         private System.Windows.Forms.Label labelIMAXR;
         private System.Windows.Forms.Label labelIR;
         private System.Windows.Forms.Label labelDR;
         private System.Windows.Forms.Label labelPR;
         private System.Windows.Forms.GroupBox groupBoxRateRoll;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericFILTR;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIMAXR;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericEXTRAR;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericPR;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericDR;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericIR;
         private System.Windows.Forms.GroupBox groupBoxRateYaw;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericFILTY;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIMAXY;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericEXTRAY;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericPY;
         private System.Windows.Forms.Label labelPY;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericDY;
@@ -2075,10 +2584,8 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericIY;
         private System.Windows.Forms.Label labelDY;
         private System.Windows.Forms.Label labelIMAXY;
-        private System.Windows.Forms.Label labelFILTY;
         private System.Windows.Forms.GroupBox groupBoxRatePitch;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericFILTP;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIMAXP;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIEXTRAP;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericPP;
         private System.Windows.Forms.Label labelPP;
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericDP;
@@ -2086,7 +2593,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericIP;
         private System.Windows.Forms.Label labelDP;
         private System.Windows.Forms.Label labelIMAXP;
-        private System.Windows.Forms.Label labelFILTP;
         private System.Windows.Forms.LinkLabel linkLabelWebSitesi;
         private System.Windows.Forms.Label labelHkkmzda;
         private System.Windows.Forms.LinkLabel linkLabelSoruGorus;
@@ -2099,6 +2605,42 @@
         private Guna.UI2.WinForms.Guna2Button ButtonYawRefresh;
         private Guna.UI2.WinForms.Guna2Button ButtonPitchRefresh;
         private Guna.UI2.WinForms.Guna2Button ButtonRollRefresh;
+        private System.Windows.Forms.GroupBox groupBoxRateHeight;
+        private Guna.UI2.WinForms.Guna2Button ButtonHeightRefresh;
+        private Guna.UI2.WinForms.Guna2Button ButtonHeightWrite;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericEXTRAH;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericPH;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericDH;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIH;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBoxRateEast;
+        private Guna.UI2.WinForms.Guna2Button ButtonEastRefresh;
+        private Guna.UI2.WinForms.Guna2Button ButtonEastWrite;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericEXTRAE;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericPE;
+        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericDE;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIE;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBoxRateNorth;
+        private Guna.UI2.WinForms.Guna2Button ButtonNorthRefresh;
+        private Guna.UI2.WinForms.Guna2Button ButtonNorthWrite;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericEXTRAN;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericPN;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericDN;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericIN;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private Guna.UI2.WinForms.Guna2Button btnWriteAll;
+        private Guna.UI2.WinForms.Guna2Button btnRefreshAll;
     }
 }
 
