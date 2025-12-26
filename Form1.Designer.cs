@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AspanGround));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelUpper = new System.Windows.Forms.Panel();
             this.ButtonDisconnect = new Guna.UI2.WinForms.Guna2Button();
             this.ButtonConnect = new Guna.UI2.WinForms.Guna2Button();
@@ -185,6 +185,7 @@
             this.linkLabelWebSitesi = new System.Windows.Forms.LinkLabel();
             this.timerGauge = new System.Windows.Forms.Timer(this.components);
             this.timerSerialCheck = new System.Windows.Forms.Timer(this.components);
+            this.watchdogTimer = new System.Windows.Forms.Timer(this.components);
             this.panelUpper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).BeginInit();
@@ -249,7 +250,7 @@
             this.panelUpper.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUpper.Location = new System.Drawing.Point(0, 0);
             this.panelUpper.Name = "panelUpper";
-            this.panelUpper.Size = new System.Drawing.Size(1969, 104);
+            this.panelUpper.Size = new System.Drawing.Size(1924, 104);
             this.panelUpper.TabIndex = 3;
             // 
             // ButtonDisconnect
@@ -266,7 +267,7 @@
             this.ButtonDisconnect.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ButtonDisconnect.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.ButtonDisconnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ButtonDisconnect.Location = new System.Drawing.Point(1661, 19);
+            this.ButtonDisconnect.Location = new System.Drawing.Point(1616, 19);
             this.ButtonDisconnect.Name = "ButtonDisconnect";
             this.ButtonDisconnect.PressedColor = System.Drawing.Color.MintCream;
             this.ButtonDisconnect.Size = new System.Drawing.Size(254, 62);
@@ -289,7 +290,7 @@
             this.ButtonConnect.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.ButtonConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ButtonConnect.IndicateFocus = true;
-            this.ButtonConnect.Location = new System.Drawing.Point(1423, 19);
+            this.ButtonConnect.Location = new System.Drawing.Point(1378, 19);
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.PressedColor = System.Drawing.Color.MintCream;
             this.ButtonConnect.Size = new System.Drawing.Size(217, 62);
@@ -312,7 +313,7 @@
             this.ComboBoxPorts.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.ComboBoxPorts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ComboBoxPorts.ItemHeight = 30;
-            this.ComboBoxPorts.Location = new System.Drawing.Point(1224, 32);
+            this.ComboBoxPorts.Location = new System.Drawing.Point(1179, 32);
             this.ComboBoxPorts.Name = "ComboBoxPorts";
             this.ComboBoxPorts.Size = new System.Drawing.Size(172, 36);
             this.ComboBoxPorts.TabIndex = 64;
@@ -338,7 +339,7 @@
             "57600"});
             this.ComboBoxBaudRates.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ComboBoxBaudRates.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.ComboBoxBaudRates.Location = new System.Drawing.Point(1004, 32);
+            this.ComboBoxBaudRates.Location = new System.Drawing.Point(959, 32);
             this.ComboBoxBaudRates.Name = "ComboBoxBaudRates";
             this.ComboBoxBaudRates.Size = new System.Drawing.Size(172, 36);
             this.ComboBoxBaudRates.TabIndex = 62;
@@ -362,7 +363,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxGrey.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxGrey.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGrey.Image")));
-            this.pictureBoxGrey.Location = new System.Drawing.Point(687, 34);
+            this.pictureBoxGrey.Location = new System.Drawing.Point(642, 34);
             this.pictureBoxGrey.Name = "pictureBoxGrey";
             this.pictureBoxGrey.Size = new System.Drawing.Size(32, 30);
             this.pictureBoxGrey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -375,7 +376,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxGreen.BackColor = System.Drawing.Color.DimGray;
             this.pictureBoxGreen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGreen.Image")));
-            this.pictureBoxGreen.Location = new System.Drawing.Point(687, 34);
+            this.pictureBoxGreen.Location = new System.Drawing.Point(642, 34);
             this.pictureBoxGreen.Name = "pictureBoxGreen";
             this.pictureBoxGreen.Size = new System.Drawing.Size(32, 30);
             this.pictureBoxGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -390,7 +391,7 @@
             this.labelNoConnection.BackColor = System.Drawing.Color.Transparent;
             this.labelNoConnection.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.labelNoConnection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.labelNoConnection.Location = new System.Drawing.Point(725, 32);
+            this.labelNoConnection.Location = new System.Drawing.Point(680, 32);
             this.labelNoConnection.Name = "labelNoConnection";
             this.labelNoConnection.Size = new System.Drawing.Size(197, 31);
             this.labelNoConnection.TabIndex = 5;
@@ -404,7 +405,7 @@
             this.labelConnected.BackColor = System.Drawing.Color.Transparent;
             this.labelConnected.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.labelConnected.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.labelConnected.Location = new System.Drawing.Point(725, 32);
+            this.labelConnected.Location = new System.Drawing.Point(680, 32);
             this.labelConnected.Name = "labelConnected";
             this.labelConnected.Size = new System.Drawing.Size(145, 31);
             this.labelConnected.TabIndex = 6;
@@ -663,7 +664,7 @@
             this.TabControl.Location = new System.Drawing.Point(0, 104);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(1969, 949);
+            this.TabControl.Size = new System.Drawing.Size(1924, 949);
             this.TabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.TabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.TabControl.TabButtonHoverState.Font = new System.Drawing.Font("Nirmala UI Semilight", 16.2F);
@@ -691,7 +692,7 @@
             this.tabPageWATCH.Location = new System.Drawing.Point(4, 64);
             this.tabPageWATCH.Name = "tabPageWATCH";
             this.tabPageWATCH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWATCH.Size = new System.Drawing.Size(1961, 881);
+            this.tabPageWATCH.Size = new System.Drawing.Size(1916, 881);
             this.tabPageWATCH.TabIndex = 0;
             this.tabPageWATCH.Text = "WATCH";
             // 
@@ -710,7 +711,7 @@
             this.panelMiddleAbove.RowCount = 2;
             this.panelMiddleAbove.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.panelMiddleAbove.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.panelMiddleAbove.Size = new System.Drawing.Size(1955, 875);
+            this.panelMiddleAbove.Size = new System.Drawing.Size(1910, 875);
             this.panelMiddleAbove.TabIndex = 37;
             // 
             // panelBelow
@@ -719,7 +720,7 @@
             this.panelBelow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBelow.Location = new System.Drawing.Point(3, 659);
             this.panelBelow.Name = "panelBelow";
-            this.panelBelow.Size = new System.Drawing.Size(776, 213);
+            this.panelBelow.Size = new System.Drawing.Size(758, 213);
             this.panelBelow.TabIndex = 40;
             // 
             // panelBottomLeft
@@ -727,7 +728,7 @@
             this.panelBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBottomLeft.Location = new System.Drawing.Point(0, 0);
             this.panelBottomLeft.Name = "panelBottomLeft";
-            this.panelBottomLeft.Size = new System.Drawing.Size(776, 213);
+            this.panelBottomLeft.Size = new System.Drawing.Size(758, 213);
             this.panelBottomLeft.TabIndex = 0;
             // 
             // panelLeft
@@ -738,7 +739,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLeft.Location = new System.Drawing.Point(3, 3);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(776, 650);
+            this.panelLeft.Size = new System.Drawing.Size(758, 650);
             this.panelLeft.TabIndex = 41;
             // 
             // ButtonDeleteWaypoint
@@ -756,7 +757,7 @@
             this.ButtonDeleteWaypoint.Font = new System.Drawing.Font("Nirmala UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDeleteWaypoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.ButtonDeleteWaypoint.IndicateFocus = true;
-            this.ButtonDeleteWaypoint.Location = new System.Drawing.Point(591, 516);
+            this.ButtonDeleteWaypoint.Location = new System.Drawing.Point(573, 516);
             this.ButtonDeleteWaypoint.Name = "ButtonDeleteWaypoint";
             this.ButtonDeleteWaypoint.PressedColor = System.Drawing.Color.MintCream;
             this.ButtonDeleteWaypoint.Size = new System.Drawing.Size(160, 114);
@@ -786,19 +787,19 @@
             this.dataGridViewWaypoints.AllowUserToDeleteRows = false;
             this.dataGridViewWaypoints.AllowUserToResizeColumns = false;
             this.dataGridViewWaypoints.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dataGridViewWaypoints.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridViewWaypoints.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewWaypoints.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.dataGridViewWaypoints.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dataGridViewWaypoints.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewWaypoints.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewWaypoints.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewWaypoints.ColumnHeadersHeight = 35;
             this.dataGridViewWaypoints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridViewWaypoints.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -807,33 +808,33 @@
             this.Altitude,
             this.Longitude,
             this.Latitude});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewWaypoints.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewWaypoints.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewWaypoints.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewWaypoints.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.dataGridViewWaypoints.Location = new System.Drawing.Point(785, 659);
+            this.dataGridViewWaypoints.Location = new System.Drawing.Point(767, 659);
             this.dataGridViewWaypoints.Name = "dataGridViewWaypoints";
             this.dataGridViewWaypoints.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewWaypoints.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewWaypoints.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewWaypoints.RowHeadersVisible = false;
             this.dataGridViewWaypoints.RowHeadersWidth = 51;
             this.dataGridViewWaypoints.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Snow;
             this.dataGridViewWaypoints.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewWaypoints.RowTemplate.Height = 24;
-            this.dataGridViewWaypoints.Size = new System.Drawing.Size(1167, 213);
+            this.dataGridViewWaypoints.Size = new System.Drawing.Size(1140, 213);
             this.dataGridViewWaypoints.TabIndex = 43;
             this.dataGridViewWaypoints.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewWaypoints.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -901,9 +902,9 @@
             this.webViewMap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.webViewMap.DefaultBackgroundColor = System.Drawing.Color.Transparent;
             this.webViewMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webViewMap.Location = new System.Drawing.Point(785, 3);
+            this.webViewMap.Location = new System.Drawing.Point(767, 3);
             this.webViewMap.Name = "webViewMap";
-            this.webViewMap.Size = new System.Drawing.Size(1167, 650);
+            this.webViewMap.Size = new System.Drawing.Size(1140, 650);
             this.webViewMap.TabIndex = 38;
             this.webViewMap.ZoomFactor = 1D;
             this.webViewMap.WebMessageReceived += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs>(this.webViewMap_WebMessageReceived);
@@ -927,7 +928,7 @@
             this.tabPageGRAPH.Location = new System.Drawing.Point(4, 64);
             this.tabPageGRAPH.Name = "tabPageGRAPH";
             this.tabPageGRAPH.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGRAPH.Size = new System.Drawing.Size(1961, 881);
+            this.tabPageGRAPH.Size = new System.Drawing.Size(1916, 881);
             this.tabPageGRAPH.TabIndex = 1;
             this.tabPageGRAPH.Text = "GRAPH";
             // 
@@ -1158,7 +1159,7 @@
             this.tabPageDATA.Location = new System.Drawing.Point(4, 64);
             this.tabPageDATA.Name = "tabPageDATA";
             this.tabPageDATA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDATA.Size = new System.Drawing.Size(1961, 881);
+            this.tabPageDATA.Size = new System.Drawing.Size(1916, 881);
             this.tabPageDATA.TabIndex = 2;
             this.tabPageDATA.Text = "DATA";
             // 
@@ -1299,7 +1300,7 @@
             this.tabPagePID.Location = new System.Drawing.Point(4, 64);
             this.tabPagePID.Name = "tabPagePID";
             this.tabPagePID.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePID.Size = new System.Drawing.Size(1961, 881);
+            this.tabPagePID.Size = new System.Drawing.Size(1916, 881);
             this.tabPagePID.TabIndex = 3;
             this.tabPagePID.Text = "PID";
             // 
@@ -2306,7 +2307,7 @@
             this.tabPageINFO.Location = new System.Drawing.Point(4, 64);
             this.tabPageINFO.Name = "tabPageINFO";
             this.tabPageINFO.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageINFO.Size = new System.Drawing.Size(1961, 881);
+            this.tabPageINFO.Size = new System.Drawing.Size(1916, 881);
             this.tabPageINFO.TabIndex = 4;
             this.tabPageINFO.Text = "MISSION";
             // 
@@ -2323,7 +2324,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 64);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1961, 881);
+            this.tabPage1.Size = new System.Drawing.Size(1916, 881);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "INFO";
             // 
@@ -2413,12 +2414,17 @@
             this.timerSerialCheck.Enabled = true;
             this.timerSerialCheck.Tick += new System.EventHandler(this.timerSerialCheck_Tick);
             // 
+            // watchdogTimer
+            // 
+            this.watchdogTimer.Interval = 200;
+            this.watchdogTimer.Tick += new System.EventHandler(this.watchdogTimer_Tick);
+            // 
             // AspanGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1969, 1053);
+            this.ClientSize = new System.Drawing.Size(1924, 1053);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.panelUpper);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2641,6 +2647,7 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button btnWriteAll;
         private Guna.UI2.WinForms.Guna2Button btnRefreshAll;
+        private System.Windows.Forms.Timer watchdogTimer;
     }
 }
 

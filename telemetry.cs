@@ -54,9 +54,34 @@ namespace AspanGround_2
                Longitude =Longitude_f,
              };
         }
-}
-        
-        public struct TelemetryData
+
+        public ModelData ParseModelInfo(byte[] packet)
+        {
+            
+            short modelId = BitConverter.ToInt16(packet, 3);
+         
+            short free1 = BitConverter.ToInt16(packet, 5);
+
+            byte ch7 = packet[7];
+            byte ch8 = packet[8];
+
+            return new ModelData
+            {
+                ModelID = modelId,
+                Channel7 = ch7,
+                Channel8 = ch8
+            };
+        }
+    }
+
+    public struct ModelData
+    {
+        public short ModelID;
+        public byte Channel7;
+        public byte Channel8;
+    }
+
+    public struct TelemetryData
         {
             public float Roll;
             public float Pitch;

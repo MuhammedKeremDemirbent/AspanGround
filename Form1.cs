@@ -351,14 +351,13 @@ namespace AspanGround_2
         {
             Telemetry = 0x10,
             Gps = 0x11,
+            ModelInfo = 0x12,
             PidRead = 0x20,
             PidWrite = 0x21,
             PidReply = 0x22
         }
         private void ButtonConnect_Click_1(object sender, EventArgs e)
         {
-
-
 
             try
             {
@@ -398,45 +397,72 @@ namespace AspanGround_2
                 MessageBox.Show("Seri port açılırken hata: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void ButtonDisconnect_Click_1(object sender, EventArgs e)
+
+        private void CloseConnection()
         {
-            if (serialPort != null && serialPort.IsOpen)
+          
+            if (this.InvokeRequired)
             {
-              
-                serialPort.DataReceived -= serialPort_DataReceived;
-                serialPort.Close();
+                this.Invoke(new Action(CloseConnection));
+                return;
+            }
+
+            watchdogTimer.Stop();
+
+            if (serialPort != null)
+            {
+               
+                if (serialPort.IsOpen)
+                {
+                    serialPort.DataReceived -= serialPort_DataReceived;
+                    try { serialPort.Close(); } catch { }
+                }
                 serialPort.Dispose();
                 serialPort = null;
-                timerGraphic.Stop();
-                timerGauge.Stop();
-                logWriter?.Close();
+            }
 
-                ButtonDisconnect.Enabled = false;
-                ButtonConnect.Enabled = true;
-                pictureBoxGreen.Visible = false;
-                pictureBoxGrey.Visible = true;
-                labelNoConnection.Visible = true;
-                labelConnected.Visible = false;
-                radioNone.Checked = true; 
-                ButtonStartLog.Text = "Start Log";      
-                
-                labelAltitude.Text = "0";
-                labelLatitude.Text = "0";
-                labelLongitude.Text = "0";
-                labelRoll.Text = "0";
-                labelPitch.Text = "0";
-                labelYaw.Text = "0";    
-                labelRH.Text = "0";
-                labelLH.Text = "0";
-                labelRV.Text = "0";
-                labelRollSetpoint.Text = "0";  
-                labelPitchSetpoint.Text = "0";
-                labelYawSetpoint.Text = "0";
-            }
-            else
-            {
-                radioNone.Checked = true;
-            }
+        
+            timerGraphic.Stop();
+            timerGauge.Stop(); 
+            logWriter?.Close();
+
+            currentRoll = 0;
+            currentPitch = 0;
+            currentYaw = 0;
+            currentAltitude = 0;
+            
+            attitudeIndicatorInstrumentControl1.SetAttitudeIndicatorParameters(0, 0); 
+            headingIndicatorInstrumentControl1.SetHeadingIndicatorParameters(0);      
+
+            attitudeIndicatorInstrumentControl1.Invalidate(); 
+            headingIndicatorInstrumentControl1.Invalidate();
+
+            ButtonDisconnect.Enabled = false;
+            ButtonConnect.Enabled = true;
+            pictureBoxGreen.Visible = false;
+            pictureBoxGrey.Visible = true;
+            labelNoConnection.Visible = true;
+            labelConnected.Visible = false;
+
+            radioNone.Checked = true;
+            ButtonStartLog.Text = "Start Log";
+
+            labelAltitude.Text = "0";
+            labelLatitude.Text = "0";
+            labelLongitude.Text = "0";
+            labelRoll.Text = "0";
+            labelPitch.Text = "0";
+            labelYaw.Text = "0";
+            labelRH.Text = "0";
+            labelLH.Text = "0";
+            labelRV.Text = "0";
+            labelRollSetpoint.Text = "0";
+            labelPitchSetpoint.Text = "0";
+            labelYawSetpoint.Text = "0";
+        }
+        private void ButtonDisconnect_Click_1(object sender, EventArgs e)
+        {
+           CloseConnection();
         }
         private void serialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
@@ -445,7 +471,6 @@ namespace AspanGround_2
 
             try
             {
-
                 int bytesToRead = serialPort.BytesToRead;
                 byte[] tempBuffer = new byte[bytesToRead];
                 serialPort.Read(tempBuffer, 0, bytesToRead);
@@ -453,10 +478,20 @@ namespace AspanGround_2
                 buffer.AddRange(tempBuffer);
 
                 while (buffer.Count >= 20)
-                {
-                    // Paket başlık kontrolü
+                {                  
                     if (buffer[0] == 0x46 && buffer[1] == 0x43)
                     {
+                       
+                        this.Invoke(new Action(() =>
+                        {                          
+                            pictureBoxGreen.Visible = true;
+                            pictureBoxGrey.Visible = false;
+                          
+                            watchdogTimer.Stop();
+                            watchdogTimer.Start();
+                        }));
+                        
+
                         byte[] packet = buffer.GetRange(0, 20).ToArray();
                         buffer.RemoveRange(0, 20);
 
@@ -520,7 +555,7 @@ namespace AspanGround_2
                                 }
                                 else if (packetType == (byte)PacketType.PidReply)
                                 {
-                                    byte fwId = packet[3];   // ✅ DOĞRU YER
+                                    byte fwId = packet[3];   
 
                                     if (fwId > 5)
                                     {
@@ -535,8 +570,11 @@ namespace AspanGround_2
 
                                     UpdatePid((PidAxis)fwId, gains);
                                 }
-
-
+                              
+                                else if (packetType == (byte)PacketType.ModelInfo)
+                                {   
+                                    ModelData modelInfo = telemetry.ParseModelInfo(packet);                                                                  
+                                }
                             })); 
                         }
                     }
@@ -564,6 +602,11 @@ namespace AspanGround_2
             headingIndicatorInstrumentControl1.Invalidate();
             
             //Console.WriteLine($"Latitude: {currentLat}, Longitude: {currentLon}");           
+        }
+        private void watchdogTimer_Tick(object sender, EventArgs e)
+        {
+            CloseConnection();
+            MessageBox.Show("Veri akışı kesildiği için bağlantı sonlandırıldı.", "Bağlantı Koptu");
         }
         private void timerSerialCheck_Tick(object sender, EventArgs e)
         {
@@ -1007,16 +1050,12 @@ namespace AspanGround_2
             serialPort.Write(packet, 0, packet.Length);
 
             pidGains[(int)axis] = gains;
-            pidValid[(int)axis] = true;
+            pidValid[(int)axis] = true; ;
 
-            // 🔥 UI’yi ZORLA güncelle
             UpdatePid(axis, gains);
 
-            Console.WriteLine(
-                $"WRITE OK → {axis} | P={gains.P} I={gains.I} D={gains.D} E={gains.Extra}"
-            );
+            Console.WriteLine($"{axis} PID write gönderildi");
         }
-
 
 
         private void ReadPid(PidAxis axis)
@@ -1186,9 +1225,6 @@ namespace AspanGround_2
             ReadPid(PidAxis.Height);
         }
 
-
-
-
         #endregion
 
         #region Info
@@ -1230,3 +1266,6 @@ namespace AspanGround_2
        
     }
 }
+
+
+
