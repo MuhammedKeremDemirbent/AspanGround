@@ -77,7 +77,8 @@ namespace AspanGround_2
             byte[] packet = new byte[20];
             packet[0] = 0x46;  
             packet[1] = 0x43;
-            packet[2] = (byte)PacketType.PidWrite;
+            packet[2] = (byte)
+            PacketType.PidWrite;
             packet[3] = fwId;
 
             BitConverter.GetBytes(gains.P).CopyTo(packet, 4);

@@ -19,7 +19,7 @@ namespace AspanGround_2
             short RV = BitConverter.ToInt16(packet, 13);
             ushort LH = BitConverter.ToUInt16(packet, 15);
 
-            float roll_f = (roll / 100.0f)+180;
+            float roll_f = (roll / 100.0f);
             float pitch_f = pitch / 100.0f;
             float yaw_f = yaw / 100.0f;
             float baroAltFilt_f = baroAltFilt / 10.0f;

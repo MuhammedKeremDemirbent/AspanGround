@@ -71,6 +71,7 @@
             this.panelMiddleAbove = new System.Windows.Forms.TableLayoutPanel();
             this.panelBelow = new System.Windows.Forms.Panel();
             this.panelBottomLeft = new System.Windows.Forms.Panel();
+            this.buttonCloud = new Guna.UI2.WinForms.Guna2Button();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.ButtonDeleteWaypoint = new Guna.UI2.WinForms.Guna2Button();
             this.headingIndicatorInstrumentControl1 = new AvionicsInstrumentControlDemo.HeadingIndicatorInstrumentControl();
@@ -183,9 +184,11 @@
             this.linkLabelSoruGorus = new System.Windows.Forms.LinkLabel();
             this.labelHkkmzda = new System.Windows.Forms.Label();
             this.linkLabelWebSitesi = new System.Windows.Forms.LinkLabel();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.timerGauge = new System.Windows.Forms.Timer(this.components);
             this.timerSerialCheck = new System.Windows.Forms.Timer(this.components);
             this.watchdogTimer = new System.Windows.Forms.Timer(this.components);
+            this.timerSQL = new System.Windows.Forms.Timer(this.components);
             this.panelUpper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGreen)).BeginInit();
@@ -193,6 +196,7 @@
             this.tabPageWATCH.SuspendLayout();
             this.panelMiddleAbove.SuspendLayout();
             this.panelBelow.SuspendLayout();
+            this.panelBottomLeft.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWaypoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webViewMap)).BeginInit();
@@ -658,6 +662,7 @@
             this.TabControl.Controls.Add(this.tabPagePID);
             this.TabControl.Controls.Add(this.tabPageINFO);
             this.TabControl.Controls.Add(this.tabPage1);
+            this.TabControl.Controls.Add(this.tabPage2);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.TabControl.ItemSize = new System.Drawing.Size(180, 60);
@@ -725,11 +730,35 @@
             // 
             // panelBottomLeft
             // 
+            this.panelBottomLeft.Controls.Add(this.buttonCloud);
             this.panelBottomLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBottomLeft.Location = new System.Drawing.Point(0, 0);
             this.panelBottomLeft.Name = "panelBottomLeft";
             this.panelBottomLeft.Size = new System.Drawing.Size(758, 213);
             this.panelBottomLeft.TabIndex = 0;
+            // 
+            // buttonCloud
+            // 
+            this.buttonCloud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCloud.Animated = true;
+            this.buttonCloud.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.buttonCloud.BorderRadius = 10;
+            this.buttonCloud.BorderThickness = 1;
+            this.buttonCloud.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonCloud.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonCloud.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonCloud.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonCloud.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.buttonCloud.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.buttonCloud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.buttonCloud.IndicateFocus = true;
+            this.buttonCloud.Location = new System.Drawing.Point(70, 34);
+            this.buttonCloud.Name = "buttonCloud";
+            this.buttonCloud.PressedColor = System.Drawing.Color.MintCream;
+            this.buttonCloud.Size = new System.Drawing.Size(338, 128);
+            this.buttonCloud.TabIndex = 66;
+            this.buttonCloud.Text = "Cloud Connect";
+            this.buttonCloud.Click += new System.EventHandler(this.buttonCloud_Click);
             // 
             // panelLeft
             // 
@@ -2405,6 +2434,17 @@
             this.linkLabelWebSitesi.Text = "Web Sitemiz";
             this.linkLabelWebSitesi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWebSitesi_LinkClicked);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.tabPage2.ForeColor = System.Drawing.Color.Snow;
+            this.tabPage2.Location = new System.Drawing.Point(4, 64);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1916, 881);
+            this.tabPage2.TabIndex = 6;
+            this.tabPage2.Text = "Logs";
+            // 
             // timerGauge
             // 
             this.timerGauge.Tick += new System.EventHandler(this.timerGauge_Tick);
@@ -2418,6 +2458,10 @@
             // 
             this.watchdogTimer.Interval = 200;
             this.watchdogTimer.Tick += new System.EventHandler(this.watchdogTimer_Tick);
+            // 
+            // timerSQL
+            // 
+            this.timerSQL.Interval = 1000;
             // 
             // AspanGround
             // 
@@ -2443,6 +2487,7 @@
             this.tabPageWATCH.ResumeLayout(false);
             this.panelMiddleAbove.ResumeLayout(false);
             this.panelBelow.ResumeLayout(false);
+            this.panelBottomLeft.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWaypoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.webViewMap)).EndInit();
@@ -2648,6 +2693,9 @@
         private Guna.UI2.WinForms.Guna2Button btnWriteAll;
         private Guna.UI2.WinForms.Guna2Button btnRefreshAll;
         private System.Windows.Forms.Timer watchdogTimer;
+        private System.Windows.Forms.Timer timerSQL;
+        private System.Windows.Forms.TabPage tabPage2;
+        private Guna.UI2.WinForms.Guna2Button buttonCloud;
     }
 }
 
